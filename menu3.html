@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .sidebar {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            width: 250px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow-y: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar:hover {
+            transform: translateX(0);
+        }
+
+        .sidebar h3 {
+            font-family: Verdana, Geneva, sans-serif;
+            margin-top: 20px;
+        }
+
+        .menu-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu-item {
+            margin-bottom: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu-item a {
+            text-decoration: none;
+            color: #fff;
+            display: block;
+            padding: 8px;
+            border-radius: 5px;
+            font-family: Georgia, serif;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu-item a:hover {
+            background-color: #555;
+        }
+
+        .submenu {
+            display: none;
+            background-color: #444;
+            padding-left: 20px;
+        }
+
+        .submenu.active {
+            display: block;
+        }
+
+        .submenu li {
+            margin-bottom: 3px;
+        }
+
+        .submenu a {
+            color: #ccc;
+            font-size: 90%;
+        }
+
+        .submenu a:hover {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <h3>DAFTAR ISI</h3>   
+    <ul class="menu-list">
+        <li class="menu-item">
+            <a href="#">Tugas Pertemuan 1</a>
+            <ul class="submenu">
+                <li><a href="pert1.html" target="isi">Pengantar Web</a></li>
+            </ul>
+        </li>
+        <li class="menu-item">
+            <a href="#">Tugas Pertemuan 2</a>
+            <ul class="submenu">
+                <li><a href="pert2.html" target="isi">Tag HTML</a></li>
+                <li><a href="pert22.html" target="isi">Format Text</a></li>
+                <li><a href="pert23.html" target="isi">Format Tulisan</a></li>
+            </ul>
+        </li>
+        <li class="menu-item">
+            <a href="#">Tugas Pertemuan 3</a>
+            <ul class="submenu">
+                <li><a href="pert3.html" target="isi">Images</a></li>
+                <li><a href="pert32.html" target="isi">Font</a></li>
+                <li><a href="pert33.html" target="isi">Link Address</a></li>
+            </ul>
+        </li>
+        <li class="menu-item">
+            <a href="#">Tugas Pertemuan 4</a>
+            <ul class="submenu">
+                <li><a href="pert4.html" target="isi">Penomoran</a></li>                        
+            </ul>
+        </li>
+        <li class="menu-item">
+            <a href="#">Tugas Pertemuan 5</a>
+            <ul class="submenu">
+                <li><a href="pert5.html" target="isi">Tabel</a></li>
+            </ul>
+        </li>
+        <li class="menu-item">
+            <a href="#">Tugas Pertemuan 6</a>
+            <ul class="submenu">
+                <li><a href="tugas/tag_html.html" target="isi">Tag HTML</a></li>
+                <li><a href="tugas/format_text.html" target="isi">Format Text</a></li>
+                <li><a href="tugas/format_tulisan.html" target="isi">Format Tulisan</a></li>
+            </ul>
+            
+        </li>
+        <li class="menu-item">
+            <a href="#">Tugas Pertemuan 7</a>
+            <ul class="submenu">
+                <li><a href="tugas/tag_html.html" target="isi">Tag HTML</a></li>
+                <li><a href="tugas/format_text.html" target="isi">Format Text</a></li>
+                <li><a href="tugas/format_tulisan.html" target="isi">Format Tulisan</a></li>
+            </ul>
+        </li>
+        
+            
+                <li class="menu-item">
+                    <a href="#">Tugas Pertemuan 8</a>
+                    <ul class="submenu">
+                        <li><a href="tugas/gambar.html" target="isi">kosong</a></li>
+                        <li><a href="tugas/font.html" target="isi">kosong</a></li>
+                        <li><a href="tugas/link.html" target="isi">kosong</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <a href="#">Tugas Pertemuan 9</a>
+                    <ul class="submenu">
+                        <li><a href="tugas/tag_html.html" target="isi">kosong</a></li>
+                        <li><a href="tugas/format_text.html" target="isi">kosong</a></li>
+                        <li><a href="tugas/format_tulisan.html" target="isi">kosong</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <a href="#">Tugas Pertemuan 10</a>
+                    <ul class="submenu">
+                        <li><a href="tugas/gambar.html" target="isi">kosong</a></li>
+                        <li><a href="tugas/font.html" target="isi">kosong</a></li>
+                        <li><a href="tugas/link.html" target="isi">kosong</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <a href="#">Tugas Pertemuan 11</a>
+                    <ul class="submenu">
+                        <li><a href="tugas/gambar.html" target="isi">kosong</a></li>
+                        <li><a href="tugas/font.html" target="isi">kosong</a></li>
+                        <li><a href="tugas/link.html" target="isi">kosong</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <a href="#">Tugas Pertemuan 12</a>
+                    <ul class="submenu">
+                        <li><a href=".html" target="isi">kosong</a></li>
+                        <li><a href=".html" target="isi">kosong</a></li>
+                        <li><a href=".html" target="isi">kosong</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <a href="#">Tugas Pertemuan 13</a>
+                    <ul class="submenu">
+                    <li><a href=".html" target="isi">kosong</a></li>
+                        <li><a href=".html" target="isi">kosong</a></li>
+                        <li><a href=".html" target="isi">koosng</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <a href="#">Tugas Pertemuan 14</a>
+                    <ul class="submenu">
+                        <li><a href=".html" target="isi">kosong</a></li>
+                        <li><a href=".html" target="isi">kosong</a></li>
+                        <li><a href=".html" target="isi">kosong</a></li>
+                    </ul>
+               
+                <li class="menu-item">
+                    <a href="#">Tugas Pertemuan 15</a>
+                    <ul class="submenu">
+                        <li><a href=".html" target="isi">koosng</a></li>
+                        <li><a href=".html" target="isi">kosong</a></li>
+                        <li><a href=".html" target="isi">kosong</a></li>
+                    </ul>
+                   
+                </li>
+                <li class="menu-item">
+                    <a href="#">Tugas Pertemuan 16</a>
+                    <ul class="submenu">
+                        <li><a href=".html" target="isi">kosong</a></li>
+                        <li><a href=".html" target="isi">kosong </a></li>
+                        <li><a href=".html" target="isi">kosong</a></li>
+                    </ul>
+                    
+                </li>
+            
+    </ul> 
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var menuItems = document.querySelectorAll('.menu-item');
+
+        menuItems.forEach(function(item) {
+            var submenu = item.querySelector('.submenu');
+            if (submenu) {
+                item.addEventListener('click', function(event) {
+                    event.stopPropagation();
+                    submenu.classList.toggle('active');
+                });
+            }
+        });
+
+        // Menutup submenu ketika area di luar submenu diklik
+        document.addEventListener('click', function(event) {
+            var submenus = document.querySelectorAll('.submenu');
+            submenus.forEach(function(submenu) {
+                if (!submenu.contains(event.target)) {
+                    submenu.classList.remove('active');
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

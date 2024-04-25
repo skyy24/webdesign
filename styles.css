@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1px;
+    text-align: ;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 5px;
+
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    margin-left: 10px;
+}
+figure {
+    display: flex;
+    align-items: center; /* Untuk mengatur posisi vertikal teks */
+    margin-left: 20px;
+}
+
+figcaption {
+    margin-left: 20px; 
+    font-size: 16px; 
+    color: #333; 
+}
+h1{
+    align-items: center;
+    color: green;
+}
+p{
+    margin-left: 10px;
+    color: green;
+}
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1px;
+    text-align: center;
+}
+

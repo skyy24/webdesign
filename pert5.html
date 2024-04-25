@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>DESAIN WEB SEM II (Tugas II)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            background-color: #f5f5f5; /* Ubah warna latar belakang */
+        }
+        
+        table {
+            margin: auto;
+            border-collapse: collapse;
+            width: 80%;
+            background-color: #fff; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            color: #333; 
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2; 
+        }
+
+        tr:hover {
+            background-color: #ddd; 
+        }
+    </style>
+</head>
+<body>
+    <h2 style="color: #555;">Daftar Mahasiswa</h2> 
+    <table>
+        <tr style="background-color: #FC819E; color: white;">
+            <td width="100" align="center" rowspan="2">Nama Mahasiswa</td>
+            <td width="200" align="center" rowspan="2">Jurusan</td>
+            <td width="100" align="center" colspan="2">Nilai</td>
+            <td width="100" align="center" rowspan="2">Nilai Akhir</td>
+        </tr>
+        <tr style="background-color: #FC819E; color: white;">
+            <td width="100" align="center">UTS</td>
+            <td width="100" align="center">UAS</td>
+        </tr>
+        <tr>
+            <td>Franky</td>
+            <td>Teknik Informatika</td>
+            <td>80</td>
+            <td>75</td>
+            <td>B</td>
+        </tr>
+        <tr>
+            <td>Mutiara</td>
+            <td>Sistem Informasi</td>
+            <td>90</td>
+            <td>85</td>
+            <td>A</td>
+        </tr>
+    </table>
+</body>
+</html>
