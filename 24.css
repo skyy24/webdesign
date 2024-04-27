@@ -1,13 +1,20 @@
+@keyframes textAnimation {
+    0% { opacity: 0; transform: translateY(-100px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
+    overflow-x: hidden; 
 }
 
 .profile-container {
     display: flex;
     justify-content: space-around;
+    overflow-x: hidden;
     margin-top: 33px;
 }
 
@@ -19,6 +26,7 @@ body {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     transition: transform 0.3s ease-in-out;
+    animation: textAnimation 1s ease forwards;
 }
 
 .container:hover {
@@ -60,15 +68,18 @@ body {
 
 h2 {
     margin-bottom: 5px;
+    animation: textAnimation 1s ease forwards;
 }
 
 p {
     margin: 5px 0;
     color: #555;
+    animation: textAnimation 1s ease forwards;
 }
 
 .contact h2, .address h2 {
     color: #333;
+    animation: textAnimation 1s ease forwards;
 }
 
 
@@ -79,17 +90,4 @@ p {
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
-}
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-    overflow-x: hidden; 
-}
-
-.profile-container {
-    display: flex;
-    justify-content: space-around;
-    overflow-x: hidden; 
 }
