@@ -69,19 +69,28 @@ body {
 h2 {
     margin-bottom: 5px;
     animation: textAnimation 1s ease forwards;
+    transition: color 0.3s ease; /* Efek hover */
 }
 
 p {
     margin: 5px 0;
     color: #555;
     animation: textAnimation 1s ease forwards;
+    transition: color 0.3s ease;
 }
 
 .contact h2, .address h2 {
     color: #333;
     animation: textAnimation 1s ease forwards;
+    transition: color 0.3s ease; 
 }
 
+.container:hover h2,
+.container:hover p,
+.container:hover .contact h2,
+.container:hover .address h2 {
+    color: #ff9800; 
+}
 
 .profile-info img:hover {
     animation: spin 0.8s ease-in-out infinite;
