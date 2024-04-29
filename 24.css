@@ -1,102 +1,164 @@
-@keyframes textAnimation {
-    0% { opacity: 0; transform: translateY(-100px); }
-    100% { opacity: 1; transform: translateY(0); }
+/* Import font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Animasi Fade In */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
+/* Animasi Pulse */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Body */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-    overflow-x: hidden; 
+  font-family: 'Poppins', sans-serif; /* Mengatur jenis font untuk seluruh body */
+  margin: 0; /* Menghapus margin */
+  padding: 0; /* Menghapus padding */
+  background: linear-gradient(135deg, #d9d9d9, #333333); /* Mengatur latar belakang dengan gradasi linear */
+  overflow-x: hidden; /* Menghilangkan overflow horizontal */
 }
 
+/* Container Profil */
 .profile-container {
-    display: flex;
-    justify-content: space-around;
-    overflow-x: hidden;
-    margin-top: 33px;
+  display: flex; /* Mengatur tampilan menjadi flexbox */
+  justify-content: center; /* Mengatur konten untuk dipusatkan secara horizontal */
+  flex-wrap: wrap; /* Mengatur agar konten bisa wrap ke baris baru */
+  overflow-x: hidden; /* Menghilangkan overflow horizontal */
 }
 
+/* Kontainer */
 .container {
-    width: 45%;
-    background: linear-gradient(135deg, #fff 50%, #f0f0f0 50%);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    transition: transform 0.3s ease-in-out;
-    animation: textAnimation 1s ease forwards;
+  width: 30%; /* Lebar kontainer */
+  background: linear-gradient(135deg, #fff 40%, #a9a9a9 60%); /* Latar belakang dengan gradasi linear */
+  padding: 20px; /* Padding dalam kontainer */
+  border-radius: 10px; /* Border radius untuk membuat sudut melengkung */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Bayangan */
+  margin: 20px; /* Margin */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transisi saat hovered */
+  animation: fadeIn 1s ease forwards; /* Animasi fade in */
+  overflow-x: hidden; /* Menghilangkan overflow horizontal */
 }
 
 .container:hover {
-    transform: scale(1.05);
+  transform: scale(1.05); /* Perbesar saat hovered */
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4); /* Bayangan saat hovered */
 }
 
+/* Judul Profil */
 .profile-title {
-    text-align: center;
-    margin-top: 0;
-    color: #333;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center; /* Posisi teks menjadi di tengah */
+  margin-top: 0; /* Margin atas */
+  color: #333; /* Warna teks */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Bayangan teks */
+  font-weight: 600; /* Ketebalan teks */
+  font-size: 20px; /* Ukuran teks */
+  text-transform: uppercase; /* Merubah teks menjadi huruf besar */
+  letter-spacing: 2px; /* Spasi antar huruf */
+  animation: pulse 2s infinite; /* Animasi pulsasi */
 }
 
+/* Info Profil */
 .profile-info {
-    display: flex;
-    align-items: center;
+  display: flex; /* Mengatur tampilan menjadi flexbox */
+  align-items: center; /* Mengatur konten untuk dipusatkan secara vertikal */
 }
 
+/* Gambar Profil */
 .profile-info img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-right: 20px;
-    transition: transform 0.3s ease-in-out;
+  width: 100px; /* Lebar gambar profil */
+  height: 100px; /* Tinggi gambar profil */
+  border-radius: 50%; /* Mengatur sudut melengkung */
+  margin-right: 20px; /* Margin kanan */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transisi saat hovered */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Bayangan */
+  border: 1px solid #ff8f00; /* Tepian dengan border */
 }
 
 .profile-info img:hover {
-    transform: rotate(360deg);
+  animation: rotate 1s ease-in-out infinite; /* Animasi rotasi saat hovered */
+  box-shadow: 0 0 20px rgba(255, 165, 0, 0.5); /* Bayangan saat hovered */
 }
 
+/* Info Tambahan */
 .info {
-    flex: 1;
+  flex: 1; /* Memperluas flex item sejauh mungkin */
 }
 
 .contact,
 .address {
-    margin-top: 20px;
+  margin-top: 20px; /* Margin atas */
 }
 
+/* Judul Kontak dan Alamat */
 h2 {
-    margin-bottom: 5px;
-    animation: textAnimation 1s ease forwards;
-    transition: color 0.3s ease; 
+  margin-bottom: 5px; /* Margin bawah */
+  animation: fadeIn 1s ease forwards; /* Animasi fade in */
+  transition: color 0.3s ease; /* Transisi warna */
+  color: #333333; /* Warna teks */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Bayangan teks */
+  text-transform: uppercase; /* Merubah teks menjadi huruf besar */
+  letter-spacing: 2px; /* Spasi antar huruf */
+  font-size: 16px; /* Ukuran teks */
 }
 
+/* Paragraf */
 p {
-    margin: 5px 0;
-    color: #555;
-    animation: textAnimation 1s ease forwards;
-    transition: color 0.3s ease;
+  margin: 5px 0; /* Margin */
+  color: #555; /* Warna teks */
+  animation: fadeIn 1s ease forwards; /* Animasi fade in */
+  transition: color 0.3s ease; /* Transisi warna */
+  font-size: 14px; /* Ukuran teks */
 }
 
-.contact h2, .address h2 {
-    color: #333;
-    animation: textAnimation 1s ease forwards;
-    transition: color 0.3s ease; 
+.contact h2,
+.address h2 {
+  color: #333333; /* Warna teks */
+  animation: fadeIn 1s ease forwards; /* Animasi fade in */
+  transition: color 0.3s ease; /* Transisi warna */
 }
 
+/* Hover Efek pada Kontainer */
 .container:hover h2,
 .container:hover p,
 .container:hover .contact h2,
 .container:hover .address h2 {
-    color: #ff9800; 
+  color: #ff8f00; /* Warna saat hovered */
 }
 
-.profile-info img:hover {
-    animation: spin 0.8s ease-in-out infinite;
+/* Garis Horizontal */
+hr {
+  border: none; /* Tanpa border */
+  border-top: 1px solid #ddd; /* Border atas */
+  margin: 20px 0; /* Margin atas dan bawah */
 }
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+/* Icon Sosial Media */
+.social-icons {
+  display: flex; /* Mengatur tampilan menjadi flexbox */
+  justify-content: center; /* Mengatur konten untuk dipusatkan secara horizontal */
+  margin-top: 20px; /* Margin atas */
+}
+
+.social-icons a {
+  color: #333; /* Warna ikon */
+  font-size: 20px; /* Ukuran ikon */
+  margin: 0 10px; /* Margin */
+  transition: color 0.3s ease,
 }
