@@ -4,51 +4,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Pendaftaran</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        td {
+            padding: 10px;
+        }
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+        input[type="submit"],
+        input[type="reset"] {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <h2 align="center">Form Pendaftaran</h2>
-    <table border="1" bgcolor="#00FF00" align="center">
+    <div class="container">
+        <h2>Form Pendaftaran</h2>
         <form method="post" action="proses.php">
-            <tr>
-                <td>Nama</td>
-                <td width="200"><input type="text" name="nama" size="10" /></td>
-            </tr>
-            <tr>
-                <td>Jenis Kelamin</td>
-                <td>
-                    <select name="jk" size="1">
-                        <option value="Laki-laki">Laki-laki</option>
-                        <option value="Perempuan">Perempuan</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Agama</td>
-                <td>
-                    <input type="radio" name="agama" value="Islam">Islam</option><br />
-                    <input type="radio" name="agama" value="Katholik">Katholik</option><br />
-                    <input type="radio" name="agama" value="Protestan">Protestan</option><br />
-                    <input type="radio" name="agama" value="Hindu">Hindu</option><br />
-                    <input type="radio" name="agama" value="Budha">Budha</option>
-                </td>
-            </tr>
-            <tr>
-                <td>Hobi</td>
-                <td>
-                    <input type="checkbox" name="hobi" value="Browsing" />Browsing<br />
-                    <input type="checkbox" name="hobi" value="Game" />Game<br />
-                    <input type="checkbox" name="hobi" value="Olahraga" />Olahraga
-                </td>
-            </tr>
-            <tr>
-                <td>Alamat</td>
-                <td><textarea name="alamat" cols="20" rows="5"></textarea></td>
-            </tr>
-            <tr>
-                <td><input type="submit" value="Kirim" /></td>
-                <td><input type="reset" value="Batal" /></td>
-            </tr>
+            <table>
+                <tr>
+                    <td>Nama</td>
+                    <td><input type="text" name="nama" /></td>
+                </tr>
+                <tr>
+                    <td>Jenis Kelamin</td>
+                    <td>
+                        <select name="jk">
+                            <option value="Laki-laki">Laki-laki</option>
+                            <option value="Perempuan">Perempuan</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Agama</td>
+                    <td>
+                        <input type="radio" name="agama" value="Islam">Islam
+                        <input type="radio" name="agama" value="Katholik">Katholik
+                        <input type="radio" name="agama" value="Protestan">Protestan
+                        <input type="radio" name="agama" value="Hindu">Hindu
+                        <input type="radio" name="agama" value="Budha">Budha
+                    </td>
+                </tr>
+                <tr>
+                    <td>Hobi</td>
+                    <td>
+                        <input type="checkbox" name="hobi[]" value="Browsing">Browsing
+                        <input type="checkbox" name="hobi[]" value="Game">Game
+                        <input type="checkbox" name="hobi[]" value="Olahraga">Olahraga
+                    </td>
+                </tr>
+                <tr>
+                    <td>Alamat</td>
+                    <td><textarea name="alamat" rows="5"></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Kirim">
+                        <input type="reset" value="Batal">
+                    </td>
+                </tr>
+            </table>
         </form>
-    </table>
+    </div>
 </body>
 </html>
