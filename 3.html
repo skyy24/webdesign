@@ -3,37 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formulir Biodata</title>
     <style>
-        table {
-            margin: auto; 
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa; 
+            color: #333; 
+            margin: 0;
+            padding: 0;
         }
 
-        .right-align {
-            text-align: right; 
+        table {
+            margin: auto;
+            border-collapse: collapse; 
+            width: 50%; 
+        }
+
+        th, td {
+            padding: 10px; 
+            border: 1px solid #ddd; 
+            text-align: left; 
+            width: 10%; 
+        }
+
+        th {
+            background-color: #007bff; 
+            color: white; 
+        }
+
+        input[type="text"],
+        input[type="submit"],
+        input[type="reset"],
+        select,
+        textarea {
+            padding: 1px; 
+            width: 100%;
+            box-sizing: border-box; 
         }
 
         .button-container {
-            display: flex;
-            justify-content: flex-end; 
+            text-align: right; 
+        }
+
+        .button-container input[type="submit"],
+        .button-container input[type="reset"] {
+            width: auto; 
+            margin-left: 10px; 
+        }
+
+        .button-container input[type="submit"]:hover,
+        .button-container input[type="reset"]:hover {
+            background-color: #007bff; 
+            color: white; 
+            cursor: pointer; 
         }
     </style>
 </head>
 <body>
     <center>
-        <table border="1">
+        <table>
             <form method="post" action="proses.php">
                 <tr>
-                    <td colspan="2" align="center">BIODATA</td>
+                    <th colspan="2" style="text-align: center;">BIODATA</th>
                 </tr>
                 <tr>
                     <td>Nama</td>
-                    <td><input type="text" name="nama" size="10" /></td>
+                    <td><input type="text" name="nama" /></td>
                 </tr>
                 <tr>
                     <td>Jenis Kelamin</td>
                     <td>
-                        <select name="jk" size="1">
+                        <select name="jk">
                             <option value="Laki-laki">Laki-laki</option>
                             <option value="Perempuan">Perempuan</option>
                         </select>
@@ -46,12 +86,14 @@
                 <tr>
                     <td>Foto Terakhir</td>
                     <td class="button-container">
-                        <input type="submit" value="Browser" class="right-align" />
+                        <input type="submit" value="Browser" />
                     </td>
                 </tr>
                 <tr>
-                    <td><input type="submit" value="Daftar" /></td>
-                    <td><input type="reset" value="Batal" /></td>
+                    <td class="button-container" colspan="2">
+                        <input type="submit" value="Daftar" />
+                        <input type="reset" value="Batal" />
+                    </td>
                 </tr>
             </form>
         </table>
