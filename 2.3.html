@@ -3,36 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kelebihan Kaputama</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa; /* Warna latar belakang */
+            color: #333; /* Warna teks */
+            margin: 0;
+            padding: 0;
+        }
+
+        .bebas {
+            text-align: center; 
+            font-size: 20px; 
+            color: #007bff; 
+            margin-top: 30px; 
+            text-transform: uppercase; 
+        }
+
+        ul {
+            list-style-type: none; 
+            padding: 0;
+            margin-top: 10px;
+        }
+
+        li {
+            margin-bottom: 10px; 
+            padding-left: 20px;
+            position: relative; 
+        }
+
+        li:before {
+            content: "\2022"; 
+            color: #007bff; 
+            position: absolute; 
+            left: 0; 
+            top: 0; 
+        }
+
+        ol {
+            list-style-type: none;
+            counter-reset: list; 
+            padding: 0;
+            margin-top: 10px;
+        }
+
+        ol li {
+            counter-increment: list;
+            margin-bottom: 5px; 
+        }
+
+        ol li:before {
+            content: counter(list, lower-alpha) ")";
+            color: #007bff; 
+            font-weight: bold; 
+            margin-right: 1px; 
+        }
+    </style>
 </head>
-<style type="text/css">
-.bebas{
-margin-top: 5px;
-text-align: center;
-
-}
-
-</style>
 <body>
-    <div class="bebas">kelebihan kaputama</div>
-<ul type="circle">
-    <li>Biaya Kuliah Murah</li>
-        <ol type="a">
-           <li>Bisa di Cicil 6x</li> 
-           <li>Bebas biaya ujian dan praktek</li> 
-        </ol>
-    <li>kampus diakui DIKTI</li>
-        <ul type="square">
-           <li>Tidak gemar melakukan kelas jarak jauh</li> 
-           <li>Akreditasi B</li> 
-        </ul>
-    <li>Kampus Nyaman</li>
-        <ol type="1">
-           <li>Full AC</li> 
-           <li>Bersih Setiap jam di Pel</li> 
-        </ol>
-
-</ul>
-
+    <div class="bebas">Kelebihan Kaputama</div>
+    <ul>
+        <li>Biaya Kuliah Murah
+            <ol>
+                <li>Bisa di Cicil 6x</li>
+                <li>Bebas biaya ujian dan praktek</li>
+            </ol>
+        </li>
+        <li>Kampus Diakui DIKTI
+            <ul>
+                <li>Tidak gemar melakukan kelas jarak jauh</li>
+                <li>Akreditasi B</li>
+            </ul>
+        </li>
+        <li>Kampus Nyaman
+            <ol>
+                <li>Full AC</li>
+                <li>Bersih Setiap jam di Pelayanan</li>
+            </ol>
+        </li>
+    </ul>
 </body>
 </html>
