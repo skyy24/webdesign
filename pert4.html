@@ -1,33 +1,83 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Penomoran</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Penomoran</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    h2 {
+      color: #007bff;
+      font-size: 28px;
+      margin-bottom: 20px;
+      text-align: center;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    h2::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: #007bff;
+    }
+    ol {
+      list-style-type: none;
+      counter-reset: item;
+      padding: 0;
+    }
+    ol > li {
+      counter-increment: item;
+      margin-bottom: 10px;
+      font-weight: bold;
+      position: relative;
+      padding-left: 30px;
+    }
+    ol > li::before {
+      content: counter(item) ". ";
+      position: absolute;
+      left: 0;
+      color: #007bff;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0 0 0 30px;
+    }
+    ul > li {
+      margin-bottom: 5px;
+      position: relative;
+    }
+    ul > li::before {
+      content: "\2022";
+      color: #007bff;
+      font-weight: bold;
+      position: absolute;
+      left: -20px;
+    }
+  </style>
 </head>
 <body>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            padding: 20px;
-        }
-    </style>
-
-    <h2>Program Studi Kaputama</h2>
-    <ol type="1">
-        <li>Program S-1</li>
-        <ul type="circle">
-            <li>Teknik Informatika</li>
-            <li>Sistem Infomasi</li>
-        </ul>
-        <li>Program D-III</li>
-        <ul type="disc">
-            <li>Manajemen Informatika</li>
-            <li>Komputerisasi Akuntansi</li>
-        </ul>
-    </ol>
-    
+  <h2>Program Studi Kaputama</h2>
+  <ol>
+    <li>Program S-1</li>
+    <ul>
+      <li>Teknik Informatika</li>
+      <li>Sistem Infomasi</li>
+    </ul>
+    <li>Program D-III</li>
+    <ul>
+      <li>Manajemen Informatika</li>
+      <li>Komputerisasi Akuntansi</li>
+    </ul>
+  </ol>
 </body>
 </html>
