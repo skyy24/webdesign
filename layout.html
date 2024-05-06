@@ -1,75 +1,103 @@
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Css Layout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
         #header {
-            padding:10px; /* jarak teks dari garis kotak */
-            border:1px solid #000000; /* membuat garis tepi 1 pixel jenis garis solid dan warna hitam */
-            background-color:#FFFFCC /* membuat warna latar */
+            padding: 20px;
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            animation: headerAnimation 1s ease-in-out;
         }
-
+        
+        
         #footer {
-            padding:10px;
-            border:1px solid #000000;
-            background-color:#FFCCFF;
+            padding: 10px;
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
         }
-
         #navigasi {
-            float:right;
-            padding:10px;
-            border:1px solid #000;
-            background:#FF99FF;
+            float: right;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            margin: 60px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-
+        #navigasi ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        #navigasi li {
+            margin-bottom: 5px;
+        }
+        #navigasi a {
+            text-decoration: none;
+            color: #333;
+            padding: 5px 10px;
+            border-radius: 3px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        #navigasi a:hover {
+            background-color: #2c3e50;
+            color: #fff;
+        }
         #isi {
-            width: 830px;
-            margin-top: 10px;
-            margin-bottom:10px;
-            padding:10px;
-            border:1px solid #000;
+            width: 80%;
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            line-height: 1.6;
+            animation: isiAnimation 1s ease-in-out;
         }
-
+       
+        
         .gambar {
             float: left;
-            margin-top: 0px;
-            margin-right: 10px;
+            margin-right: 20px;
             margin-bottom: 10px;
-            margin-left: 0px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
         }
+        
     </style>
 </head>
 <body>
     <div id="header">
         <h2>Selamat Datang di Website Kami</h2>
     </div>
-
     <div id="navigasi">
         <h3>Menu Navigasi</h3>
         <ul>
-        <li><a href="beranda.htm">Beranda</a></li>
-        <li><a href="krs.htm">KRS</a></li>
-        <li><a href="krs.htm">KHS</a></li>
-        <li><a href="daftar.htm">Daftar</a></li>
+            <li><a href="profil kelompok.html">Beranda</a></li>
+            <li><a href="https://sia.kaputama.ac.id/siak.php?module=krs" target="isi">KRS</a></li>
+            <li><a href="https://sia.kaputama.ac.id/siak.php?module=khs" target="isi">KHS</a></li>
+            <li><a href="latform.html">Daftar</a></li>
         </ul>
     </div>
-        
     <div id="isi">
-        <img src="logo.jpg" height="160" width="250" class="gambar"/>
-        <p>Ini adalah bagian isi. Membuat tampilan website lebih menarik dan halaman website lebih terstruktur dengan memanfaatkan CSS. Dengan
-        CSS, tidak membutuhkan tabel dalam menata layout. Kelebihan CSS dalam layout web dibandingkan tabel adalah fleksibilitas dan juga lebih
-        meminimalisasi jumlah byte file
-        </p>
-        <p>Ini adalah bagian isi. Apabila menggunakan tabel untuk mendesain layout, maka semakin banyak sel yang dibuat, akan semakin besar ukuran
-        byte file dan akibatnya loading web pun membutuhkan waktu yang lebih lama.
-        </p>
+        <img src="logo.jpg" height="160" width="250" class="gambar" />
+        <p>Ini adalah bagian isi. Membuat tampilan website lebih menarik dan halaman website lebih terstruktur dengan memanfaatkan CSS. Dengan CSS, tidak membutuhkan tabel dalam menata layout. Kelebihan CSS dalam layout web dibandingkan tabel adalah fleksibilitas dan juga lebih meminimalisasi jumlah byte file</p>
+        <p>Ini adalah bagian isi. Apabila menggunakan tabel untuk mendesain layout, maka semakin banyak sel yang dibuat, akan semakin besar ukuran byte file dan akibatnya loading web pun membutuhkan waktu yang lebih lama.</p>
     </div>
-        
     <div id="footer">
         <p>Copyright &copy; 2013 by Mr.B</p>
     </div>
-
 </body>
 </html>
