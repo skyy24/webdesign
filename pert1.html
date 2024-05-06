@@ -1,42 +1,87 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pengantar Web</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            padding: 20px;
-        }
-        h1 {
-            color: #333;
-            font-size: 36px;
-            text-align: center;
-        }
-        p {
-            color: #666;
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pengantar Web</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    h1 {
+      color: #333;
+      font-size: 36px;
+      text-align: center;
+      margin-bottom: 40px;
+      position: relative;
+      display: inline-block;
+    }
+    h1::before {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 5px;
+      background-color: #007bff;
+    }
+    p {
+      color: #555;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 10px;
+      padding-left: 30px;
+      position: relative;
+      line-height: 1.8;
+    }
+    li::before {
+      content: "\f054";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      color: #007bff;
+      position: absolute;
+      left: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .icon {
+      font-size: 24px;
+      margin-right: 10px;
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
     <h1>Pengantar Web</h1>
-    <p>Halaman ini adalah contoh halaman "Pengantar Web". Di sini Anda dapat menambahkan konten pengantar yang relevan tentang pengembangan web.</p>
-    <p>Web development adalah proses membangun dan memelihara sebuah website. Ini melibatkan aspek-aspek seperti desain web, pengkodean (HTML, CSS, JavaScript), pengelolaan database, dan pengoptimalan kinerja.</p>
-    <p>Untuk mempelajari lebih lanjut tentang pengembangan web, Anda dapat menjelajahi berbagai topik seperti:</p>
+    <p>Selamat datang di halaman "Pengantar Web". Di sini Anda dapat menemukan informasi yang relevan tentang pengembangan web.</p>
+    <p><strong>Web development</strong> adalah proses membangun dan memelihara sebuah website. Ini melibatkan aspek-aspek seperti desain web, pengkodean (HTML, CSS, JavaScript), pengelolaan database, dan pengoptimalan kinerja.</p>
+    <p>Untuk mempelajari lebih lanjut tentang <strong>pengembangan web</strong>, Anda dapat menjelajahi berbagai topik seperti:</p>
     <ul>
-        <li>HTML: untuk struktur dan konten halaman web</li>
-        <li>CSS: untuk gaya dan tata letak</li>
-        <li>JavaScript: untuk interaktivitas dan perilaku dinamis</li>
-        <li>Framework dan library seperti Bootstrap, React, atau Angular</li>
-        <li>Backend development dengan bahasa seperti PHP, Python, atau Node.js</li>
-        <li>Pengembangan aplikasi web responsif dan mobile-friendly</li>
-        <li>Keamanan web dan praktik terbaik</li>
+      <li><i class="icon fas fa-code"></i>HTML: untuk struktur dan konten halaman web</li>
+      <li><i class="icon fas fa-paint-brush"></i>CSS: untuk gaya dan tata letak</li>
+      <li><i class="icon fas fa-cogs"></i>JavaScript: untuk interaktivitas dan perilaku dinamis</li>
+      <li><i class="icon fas fa-cube"></i>Framework dan library seperti Bootstrap, React, atau Angular</li>
+      <li><i class="icon fas fa-server"></i>Backend development dengan bahasa seperti PHP, Python, atau Node.js</li>
+      <li><i class="icon fas fa-mobile-alt"></i>Pengembangan aplikasi web responsif dan mobile-friendly</li>
+      <li><i class="icon fas fa-lock"></i>Keamanan web dan praktik terbaik</li>
     </ul>
- 
+  </div>
 </body>
 </html>
