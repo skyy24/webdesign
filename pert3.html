@@ -1,21 +1,69 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Images</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Images</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+      background-color: #f4f4f4;
+      color: #333;
+      text-align: center;
+    }
+    h1 {
+      color: #007bff;
+      font-size: 28px;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    h1::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: #007bff;
+    }
+    p {
+      margin-bottom: 20px;
+      font-weight: bold;
+      color: #555;
+    }
+    img {
+      display: inline-block;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    img:hover {
+      transform: scale(1.05);
+    }
+    .no-border {
+      box-shadow: none;
+    }
+    .bordered {
+      border: 2px solid #007bff;
+      padding: 5px;
+    }
+    .hspace {
+      margin-right: 100px;
+    }
+  </style>
 </head>
 <body>
-    
-    <p>Gambar tanpa format</p>
-    <img src="gunung1.jpg" height="100">
-
-    <p>Gambar dengan format hspace</p>
-    <img src="gunung2.jpg" height="100" hspace="100">
-
-    <p>Gambar dengan border</p>
-    <img src="gunung3.jpg" border="2" height="100">
-
+  <h1>Images</h1>
+  <p>Gambar tanpa format</p>
+  <img src="gunung1.jpg" alt="Gambar tanpa format" height="100" class="no-border">
+  <p>Gambar dengan format hspace</p>
+  <img src="gunung2.jpg" alt="Gambar dengan format hspace" height="100" class="hspace">
+  <p>Gambar dengan border</p>
+  <img src="gunung3.jpg" alt="Gambar dengan border" border="2" height="100" class="bordered">
 </body>
 </html>
