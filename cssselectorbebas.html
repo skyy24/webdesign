@@ -1,24 +1,31 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<style type="text/css">
-    bebas
-    {
-    font-family:"Times New Roman", Times, serif;
-    text-decoration:underline;
-    color:#FF0000;
-    }
-    </style>
-<body>
+    <title>Gaya Teks Kustom</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            padding: 20px;
+            text-align: center;
+        }
 
-    Ini tidak pakai selector bebas<br />
- <bebas>Ini pakai Selector bebas Menggunakan jenis huruf Times New Roman<br />
- Dan cetak miring dan berwarna merah</bebas>
-    
+        .bebas {
+            font-family: 'Times New Roman', Times, serif;
+            text-decoration: underline;
+            color: #ff6600;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <p>Ini tidak pakai kelas bebas</p>
+    <p class="bebas">Ini pakai kelas bebas<br>Menggunakan jenis huruf Times New Roman<br>Dan cetak miring dan berwarna oranye</p>
 </body>
 </html>
