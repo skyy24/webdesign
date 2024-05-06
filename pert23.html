@@ -1,28 +1,87 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Format Tulisan</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Format Tulisan</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    h1 {
+      color: #007bff;
+      font-size: 28px;
+      margin-bottom: 20px;
+      text-align: center;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    h1::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: #007bff;
+    }
+    .format-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .format-item {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 200px;
+    }
+    .format-item span {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .bold span {
+      font-weight: bold;
+    }
+    .italic span {
+      font-style: italic;
+    }
+    .underline span {
+      text-decoration: underline;
+    }
+    .strike span {
+      text-decoration: line-through;
+    }
+    .big span {
+      font-size: 24px;
+    }
+    .small span {
+      font-size: 14px;
+    }
+    .sub span {
+      font-size: 16px;
+      vertical-align: sub;
+    }
+  </style>
 </head>
 <body>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            padding: 20px;
-        }
-    </style>
-
-    <b>Tulisan bold</b><br/>
-    <i>Cetak miring</i><br/>
-    <u>Garis Bawah</u><br/>
-    <strike>Garis di tengah</strike><br/>
-    <big>Huruf lebih besar</big><br/>
-    <small>Huruf lebih kecil</small><br/>
-    a <sub>a</sub>
-    4 <sub>2</sub>
-    
+  <h1>Format Tulisan</h1>
+  <div class="format-container">
+    <div class="format-item bold"><span>Tulisan bold</span></div>
+    <div class="format-item italic"><span>Cetak miring</span></div>
+    <div class="format-item underline"><span>Garis Bawah</span></div>
+    <div class="format-item strike"><span>Garis di tengah</span></div>
+    <div class="format-item big"><span>Huruf lebih besar</span></div>
+    <div class="format-item small"><span>Huruf lebih kecil</span></div>
+    <div class="format-item sub"><span>a <sub>a</sub> 4 <sub>2</sub></span></div>
+  </div>
 </body>
 </html>
