@@ -1,26 +1,31 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<style type="text/css">
-    .kelas
-    {
-    font-family:"Courier New", Courier, monospace;
-    text-align:center;
-    color:#FF0000;
-    }
+    <title>Contoh CSS</title>
+    <style type="text/css">
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+        .kelas {
+            font-family: "Courier New", Courier, monospace;
+            text-align: center;
+            color: #FF0000;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        p {
+            margin: 20px;
+            line-height: 1.5;
+        }
     </style>
+</head>
 <body>
-
-    <p class="kelas">Ini dikenai selector pakai kelas
-        Menggunakan jenis huruf Courier New
-        Rata Tengah dan berwarna merah</p>
-        <p>Ini tidak dikenai efek CSS karena paragraf ini 
-       tidak disertakan class kelas</p>
-    
+    <p class="kelas">Ini dikenai selector pakai kelas Menggunakan jenis huruf Courier New Rata Tengah dan berwarna merah</p>
+    <p>Ini tidak dikenai efek CSS karena paragraf ini tidak disertakan class kelas</p>
 </body>
 </html>
