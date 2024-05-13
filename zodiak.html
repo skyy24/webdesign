@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Zodiak</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #7f7fd5, #86a8e7, #91eae4);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 40px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+        }
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        input[type="number"], select {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 30px;
+            box-sizing: border-box;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            font-size: 16px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s;
+        }
+
+        input[type="number"]:focus, select:focus {
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 30px;
+            box-sizing: border-box;
+            background: linear-gradient(90deg, #ffffff, #ffffff);
+            color: #333;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background: linear-gradient(90deg, #ff7675, #fbc4a4);
+        }
+
+        #result {
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        h3 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Game Zodiak</h2>
+        <form id="inputForm">
+            <select id="month">
+                <option value="1">Januari</option>
+                <option value="2">Februari</option>
+                <option value="3">Maret</option>
+                <option value="4">April</option>
+                <option value="5">Mei</option>
+                <option value="6">Juni</option>
+                <option value="7">Juli</option>
+                <option value="8">Agustus</option>
+                <option value="9">September</option>
+                <option value="10">Oktober</option>
+                <option value="11">November</option>
+                <option value="12">Desember</option>
+            </select>
+            <input type="number" id="day" placeholder="Masukkan Tanggal" min="1" max="31">
+            <input type="submit" value="Lihat Ramalan">
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        document.getElementById("inputForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            var month = parseInt(document.getElementById("month").value);
+            var day = parseInt(document.getElementById("day").value);
+
+            var zodiacSign = determineZodiacSign(month, day);
+
+            var horoscope = getHoroscope(zodiacSign);
+
+            var resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = "<h3>Zodiak Anda: " + zodiacSign + "</h3>";
+            resultDiv.innerHTML += "<p>" + horoscope + "</p>";
+        });
+
+        function determineZodiacSign(month, day) {
+            if ((month == 3 && day >= 21) || (month == 4 && day <= 19)) {
+                return "Aries";
+            } else if ((month == 4 && day >= 20) || (month == 5 && day <= 20)) {
+                return "Taurus";
+            } else if ((month == 5 && day >= 21) || (month == 6 && day <= 20)) {
+                return "Gemini";
+            } else if ((month == 6 && day >= 21) || (month == 7 && day <= 22)) {
+                return "Cancer";
+            } else if ((month == 7 && day >= 23) || (month == 8 && day <= 22)) {
+                return "Leo";
+            } else if ((month == 8 && day >= 23) || (month == 9 && day <= 22)) {
+                return "Virgo";
+            } else if ((month == 9 && day >= 23) || (month == 10 && day <= 22)) {
+                return "Libra";
+            } else if ((month == 10 && day >= 23) || (month == 11 && day <= 21)) {
+                return "Scorpio";
+            } else if ((month == 11 && day >= 22) || (month == 12 && day <= 21)) {
+                return "Sagittarius";
+            } else if ((month == 12 && day >= 22) || (month == 1 && day <= 19)) {
+                return "Capricorn";
+            } else if ((month == 1 && day >= 20) || (month == 2 && day <= 18)) {
+                return "Aquarius";
+            } else if ((month == 2 && day >= 19) || (month == 3 && day <= 20)) {
+                return "Pisces";
+            }
+        }  
+        function getHoroscope(zodiacSign) {
+            switch(zodiacSign) {
+                case "Aries":
+        return "Ramalan kesehatan: Anda akan memiliki energi yang tinggi hari ini.<br>Asmara: Hubungan asmara Anda akan berjalan lancar.<br>Keuangan: Ada kemungkinan keuntungan keuangan.<br>Karier: Fokuslah pada proyek kerja Anda.";
+    case "Taurus":
+        return "Ramalan kesehatan: Perhatikan pola makan dan istirahat yang cukup.<br>Asmara: Hari ini adalah waktu yang tepat untuk berbicara terbuka dengan pasangan.<br>Keuangan: Tetapkan tujuan keuangan jangka panjang.<br>Karier: Berikan yang terbaik dalam pekerjaan Anda.";
+    case "Gemini":
+        return "Ramalan kesehatan: Perhatikan kesehatan mental Anda.<br>Asmara: Waktunya untuk merencanakan liburan bersama pasangan.<br>Keuangan: Atur ulang anggaran Anda untuk menghindari pemborosan.<br>Karier: Berikan perhatian khusus pada detail.";
+    case "Cancer":
+        return "Ramalan kesehatan: Berolahraga secara teratur untuk menjaga kesehatan fisik.<br>Asmara: Komunikasikan perasaan Anda dengan jujur ​​kepada pasangan.<br>Keuangan: Evaluasi kebutuhan keuangan jangka panjang Anda.<br>Karier: Jangan ragu untuk mengejar kesempatan baru.";
+    case "Leo":
+        return "Ramalan kesehatan: Hindari stres berlebihan dengan berolahraga dan meditasi.<br>Asmara: Waktunya untuk merayakan hubungan yang kokoh dengan pasangan.<br>Keuangan: Manfaatkan peluang investasi yang mungkin muncul.<br>Karier: Tingkatkan keterampilan komunikasi Anda.";
+    case "Virgo":
+        return "Ramalan kesehatan: Prioritaskan pola makan sehat dan istirahat yang cukup.<br>Asmara: Jaga kepercayaan dalam hubungan Anda dengan pasangan.<br>Keuangan: Buat rencana tabungan untuk masa depan.<br>Karier: Pertimbangkan untuk mengambil tanggung jawab tambahan di tempat kerja.";
+    case "Libra":
+        return "Ramalan kesehatan: Luangkan waktu untuk merawat diri sendiri dan menghilangkan stres.<br>Asmara: Waktunya untuk menghadapi masalah hubungan dengan pasangan.<br>Keuangan: Buat strategi untuk mengelola utang dan pengeluaran.<br>Karier: Jangan ragu untuk berbagi ide-ide kreatif Anda.";
+    case "Scorpio":
+        return "Ramalan kesehatan: Waspadai gejala kelelahan dan stres.<br>Asmara: Temukan keseimbangan antara kebutuhan pribadi dan pasangan.<br>Keuangan: Pertimbangkan untuk merencanakan investasi jangka panjang.<br>Karier: Terimalah tantangan baru di tempat kerja.";
+    case "Sagittarius":
+        return "Ramalan kesehatan: Jaga kebugaran fisik dengan olahraga rutin.<br>Asmara: Waktunya untuk berbagi impian dan tujuan dengan pasangan.<br>Keuangan: Evaluasi strategi keuangan Anda untuk mencapai tujuan.<br>Karier: Jadilah proaktif dalam mengejar kesempatan karier.";
+    case "Capricorn":
+        return "Ramalan kesehatan: Tetapkan rutinitas sehat untuk menjaga kesehatan fisik dan mental.<br>Asmara: Berbicaralah dengan jujur ​​dan terbuka dengan pasangan.<br>Keuangan: Fokuslah pada pembentukan keuangan jangka panjang.<br>Karier: Ambil langkah-langkah untuk mencapai tujuan karier Anda.";
+    case "Aquarius":
+        return "Ramalan kesehatan: Luangkan waktu untuk istirahat dan relaksasi.<br>Asmara: Jaga komunikasi yang terbuka dengan pasangan.<br>Keuangan: Tinjau kembali anggaran Anda untuk menghindari pemborosan.<br>Karier: Jelajahi peluang baru di tempat kerja.";
+    case "Pisces":
+        return "Ramalan kesehatan: Pertahankan keseimbangan dalam kegiatan fisik dan mental.<br>Asmara: Berikan perhatian khusus pada kebutuhan emosional pasangan.<br>Keuangan: Atur ulang prioritas keuangan Anda untuk masa depan yang lebih stabil.<br>Karier: Manfaatkan kreativitas Anda dalam proyek kerja.";
+    default:
+        return "";
+            }
+        }
+    </script>
+</body>
+</html>

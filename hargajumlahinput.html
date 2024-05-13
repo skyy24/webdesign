@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Diskon Pembelian</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ffa500, #ff6347);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+            backdrop-filter: blur(10px);
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            text-align: left;
+            color: #333;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        input {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.6);
+            color: #333;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        input::placeholder {
+            color: rgba(51, 51, 51, 0.6);
+        }
+
+        button {
+            padding: 12px 24px;
+            background: linear-gradient(to right, #ff6347, #ffa500);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: box-shadow 0.3s ease;
+        }
+
+        button:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        #hasilTotal {
+            margin-top: 30px;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Program Diskon Pembelian</h2>
+        <form>
+            <label for="hargaInput">Harga Barang:</label>
+            <input type="number" id="hargaInput" placeholder="Harga Barang" required>
+            <label for="jumlahInput">Jumlah Pembelian:</label>
+            <input type="number" id="jumlahInput" placeholder="Jumlah Pembelian" required>
+            <button type="button" onclick="hitungTotal()">Hitung Total Bayar</button>
+        </form>
+        <div id="hasilTotal"></div>
+    </div>
+
+    <script>
+        function hitungTotal() {
+            var harga = parseInt(document.getElementById("hargaInput").value);
+            var jumlah = parseInt(document.getElementById("jumlahInput").value);
+            var diskon = 0;
+
+            if (jumlah >= 3) {
+                diskon = 0.1 * (harga * jumlah);
+            }
+
+            var totalBayar = (harga * jumlah) - diskon;
+            document.getElementById("hasilTotal").innerHTML = "Total Bayar: Rp " + totalBayar;
+        }
+    </script>
+</body>
+</html>

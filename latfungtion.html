@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        input[type="button"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="button"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Selamat Datang!</h2>
+        <p>Silakan masukkan nilai Anda:</p>
+        <form>
+            <input type="number" id="nilaiInput" placeholder="Masukkan Nilai Anda" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+            <br><br>
+            <input type="button" value="Klik" onclick="nilai()" />
+        </form>
+    </div>
+
+    <script>
+        function nilai() {
+            var nilai = document.getElementById("nilaiInput").value;
+            if(nilai === "") {
+                alert("Silakan masukkan nilai terlebih dahulu!");
+            } else {
+                document.write("<h2>Nilai Anda Adalah: " + nilai + "</h2>");
+            }
+        }
+    </script>
+</body>
+</html>

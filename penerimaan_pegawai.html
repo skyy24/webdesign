@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Penerimaan Pegawai</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* General styles */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .title {
+            color: #333;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 400px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #f8f8f8;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+
+        .btn-primary {
+            padding: 12px 24px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            margin-top: 30px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .requirements {
+            text-align: left;
+            margin-top: 40px;
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .requirements h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .requirements p {
+            color: #555;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Program Penerimaan Pegawai</h1>
+        <form>
+            <div class="form-group">
+                <label for="jenisKelamin">Jenis Kelamin:</label>
+                <select id="jenisKelamin" class="form-control">
+                    <option value="laki-laki">Laki-laki</option>
+                    <option value="perempuan">Perempuan</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="tinggiBadan">Tinggi Badan (cm):</label>
+                <input type="number" id="tinggiBadan" placeholder="Tinggi Badan" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="beratBadan">Berat Badan (kg):</label>
+                <input type="number" id="beratBadan" placeholder="Berat Badan" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="ipk">IPK:</label>
+                <input type="number" step="0.01" id="ipk" placeholder="IPK" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="pendidikan">Pendidikan:</label>
+                <select id="pendidikan" class="form-control">
+                    <option value="D3">D3</option>
+                    <option value="S1">S1</option>
+                </select>
+            </div>
+            <button type="button" onclick="cekKelayakan()" class="btn-primary">Cek Kelayakan</button>
+        </form>
+        <div id="hasilKelayakan" class="result"></div>
+        <div class="requirements">
+            <h3>Persyaratan Penerimaan:</h3>
+            <p>- Laki-laki: Tinggi badan 170-179 cm, Berat badan ideal (Tinggi badan - 110), IPK 3-4, Pendidikan D3/S1.</p>
+            <p>- Perempuan: Tinggi badan 160-170 cm, Berat badan ideal (Tinggi badan - 110), IPK 3-4, Pendidikan D3/S1.</p>
+        </div>
+    </div>
+
+    <script>
+        function cekKelayakan() {
+            var jenisKelamin = document.getElementById("jenisKelamin").value;
+            var tinggiBadan = parseInt(document.getElementById("tinggiBadan").value);
+            var beratBadan = parseInt(document.getElementById("beratBadan").value);
+            var ipk = parseFloat(document.getElementById("ipk").value);
+            var pendidikan = document.getElementById("pendidikan").value;
+            var kelayakan = "Tidak Lulus";
+
+            if ((jenisKelamin === "laki-laki" && tinggiBadan >= 170 && tinggiBadan <= 179 && beratBadan === (tinggiBadan - 110) && ipk >= 3 && ipk <= 4 && (pendidikan === "D3" || pendidikan === "S1")) ||
+                (jenisKelamin === "perempuan" && tinggiBadan >= 160 && tinggiBadan <= 170 && beratBadan === (tinggiBadan - 110) && ipk >= 3 && ipk <= 4 && (pendidikan === "D3" || pendidikan === "S1"))) {
+                kelayakan = "Lulus";
+            }
+
+            document.getElementById("hasilKelayakan").innerHTML = "Kelayakan: " + kelayakan;
+        }
+    </script>
+</body>
+</html>

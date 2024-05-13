@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perhitungan Gaji</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(135deg, #292E49, #536976);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+            backdrop-filter: blur(10px);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+        }
+
+        h2 {
+            color: #fff;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            text-align: left;
+            color: #fff;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        input {
+            padding: 12px 20px;
+            margin-bottom: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            width: 100%;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        input:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.8);
+        }
+
+        button {
+            padding: 12px 24px;
+            background: linear-gradient(to right, #FF416C, #FF4B2B);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: box-shadow 0.3s ease;
+        }
+
+        button:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        #hasil {
+            margin-top: 30px;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Perhitungan Gaji</h2>
+        <label for="jamKerja">Jumlah Jam Kerja:</label>
+        <input type="number" id="jamKerja" placeholder="Masukkan jumlah jam kerja" required>
+        <button onclick="hitungGaji()">Hitung Gaji</button>
+        <div id="hasil"></div>
+    </div>
+
+    <script>
+        function hitungGaji() {
+            const jamKerja = parseInt(document.getElementById("jamKerja").value);
+            const gajiHarian = 50000;
+            let gajiLembur = 0;
+            let bonus = 0;
+
+            if (jamKerja <= 8) {
+                gajiLembur = 0;
+            } else if (jamKerja > 8 && jamKerja <= 10) {
+                gajiLembur = (jamKerja - 8) * 25000;
+            } else {
+                gajiLembur = 2 * 25000 + (jamKerja - 10) * 35000;
+            }
+
+            if (jamKerja >= 20) {
+                bonus = 5000;
+            }
+
+            const gajiTotal = gajiHarian + gajiLembur + bonus;
+            document.getElementById("hasil").innerHTML = `Gaji Total: Rp ${gajiTotal.toLocaleString()}`;
+        }
+    </script>
+</body>
+</html>
