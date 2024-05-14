@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-        
         body {
             margin: 0;
             padding: 0;
@@ -56,6 +56,10 @@
             transition: background-color 0.3s ease;
         }
 
+        .menu-item a i {
+            margin-right: 8px;
+        }
+
         .menu-item a:hover {
             background-color: #555;
         }
@@ -87,146 +91,140 @@
 <body>
 
 <div class="sidebar">
-    <h3>DAFTAR ISI</h3>   
+    <h3>DAFTAR ISI</h3>
     <ul class="menu-list">
         <li class="menu-item">
-            <a href="#">Tugas Pertemuan 1</a>
+            <a href="#"><i class="fas fa-book"></i>Tugas Pertemuan 1</a>
             <ul class="submenu">
-                <li><a href="pert1.html" target="isi">Pengantar Web</a></li>
+                <li><a href="pert1.html" target="isi"><i class="fas fa-file-alt"></i>Pengantar Web</a></li>
             </ul>
         </li>
         <li class="menu-item">
-            <a href="#">Tugas Pertemuan 2</a>
+            <a href="#"><i class="fas fa-code"></i>Tugas Pertemuan 2</a>
             <ul class="submenu">
-                <li><a href="pert2.html" target="isi">Tag HTML</a></li>
-                <li><a href="pert22.html" target="isi">Format Text</a></li>
-                <li><a href="pert23.html" target="isi">Format Tulisan</a></li>
+                <li><a href="pert2.html" target="isi"><i class="fas fa-code"></i>Tag HTML</a></li>
+                <li><a href="pert22.html" target="isi"><i class="fas fa-text-height"></i>Format Text</a></li>
+                <li><a href="pert23.html" target="isi"><i class="fas fa-font"></i>Format Tulisan</a></li>
             </ul>
         </li>
         <li class="menu-item">
-            <a href="#">Tugas Pertemuan 3</a>
+            <a href="#"><i class="fas fa-image"></i>Tugas Pertemuan 3</a>
             <ul class="submenu">
-                <li><a href="pert3.html" target="isi">Images</a></li>
-                <li><a href="pert32.html" target="isi">Font</a></li>
-                <li><a href="pert33.html" target="isi">Link Address</a></li>
+                <li><a href="pert3.html" target="isi"><i class="fas fa-image"></i>Images</a></li>
+                <li><a href="pert32.html" target="isi"><i class="fas fa-font"></i>Font</a></li>
+                <li><a href="pert33.html" target="isi"><i class="fas fa-link"></i>Link Address</a></li>
             </ul>
         </li>
         <li class="menu-item">
-            <a href="#">Tugas Pertemuan 4</a>
+            <a href="#"><i class="fas fa-list-ol"></i>Tugas Pertemuan 4</a>
             <ul class="submenu">
-                <li><a href="pert4.html" target="isi">Penomoran</a></li>                        
+                <li><a href="pert4.html" target="isi"><i class="fas fa-list-ol"></i>Penomoran</a></li>
             </ul>
         </li>
         <li class="menu-item">
-            <a href="#">Tugas Pertemuan 5</a>
+            <a href="#"><i class="fas fa-table"></i>Tugas Pertemuan 5</a>
             <ul class="submenu">
-                <li><a href="pert5.html" target="isi">Tabel</a></li>
-                <li><a href="frame1.html" target="isi">Latihan Tabel</a></li>
+                <li><a href="pert5.html" target="isi"><i class="fas fa-table"></i>Tabel</a></li>
+                <li><a href="frame1.html" target="isi"><i class="fas fa-table"></i>Latihan Tabel</a></li>
             </ul>
         </li>
         <li class="menu-item">
-            <a href="#">Tugas Pertemuan 6</a>
+            <a href="#"><i class="fas fa-file-alt"></i>Tugas Pertemuan 6</a>
             <ul class="submenu">
-                <li><a href="latform.html" target="isi">Form</a></li>
-                <li><a href="latihanform.html" target="isi">Latihan Form</a></li>
+                <li><a href="latform.html" target="isi"><i class="fas fa-file-alt"></i>Form</a></li>
+                <li><a href="latihanform.html" target="isi"><i class="fas fa-file-alt"></i>Latihan Form</a></li>
             </ul>
-            
         </li>
         <li class="menu-item">
-            <a href="#">Tugas Pertemuan 7</a>
+            <a href="#"><i class="fas fa-desktop"></i>Tugas Pertemuan 7</a>
             <ul class="submenu">
-                <li><a href="externalcss.html" target="isi">External CSS</a></li>
-                <li><a href="internalcss.html" target="isi">Internal CSS</a></li>
-                <li><a href="cssselectorbebas.html" target="isi">CSS Selector Bebas</a></li>
-                <li><a href="cssselectorclass.html" target="isi">CSS Selector Class</a></li>
-                <li><a href="cssselectorid.html" target="isi">CSS Selector Id</a></li>
-                <li><a href="layout.html" target="isi">CSS layout</a></li>
+                <li><a href="externalcss.html" target="isi"><i class="fas fa-file-code"></i>External CSS</a></li>
+                <li><a href="internalcss.html" target="isi"><i class="fas fa-file-code"></i>Internal CSS</a></li>
+                <li><a href="cssselectorbebas.html" target="isi"><i class="fas fa-code"></i>CSS Selector Bebas</a></li>
+                <li><a href="cssselectorclass.html" target="isi"><i class="fas fa-code"></i>CSS Selector Class</a></li>
+                <li><a href="cssselectorid.html" target="isi"><i class="fas fa-code"></i>CSS Selector Id</a></li>
+                <li><a href="layout.html" target="isi"><i class="fas fa-desktop"></i>CSS layout</a></li>
             </ul>
         </li>
-        
-            
-                <li class="menu-item">
-                    <a href="#">Tugas Pertemuan 8</a>
-                    <ul class="submenu">
-                        <li><a target="isi">UTS</a></li>
-                    </ul>
+        <li class="menu-item">
+            <a href="#"><i class="fas fa-file-alt"></i>Tugas Pertemuan 8</a>
+            <ul class="submenu">
+                <li><a target="isi"><i class="fas fa-file-alt"></i>UTS</a></li>
+            </ul>
+        </li>
+        <li class="menu-item">
+            <a href="#"><i class="fas fa-code"></i>Tugas Pertemuan 9</a>
+            <ol class="submenu" type="a">
+                <li><a href="latvar.html" target="isi"><i class="fas fa-code"></i>Variabel</a></li>
+                <li><a href="latoperator.html" target="isi"><i class="fas fa-code"></i>Operator</a></li>
+                <li><a href="lat_if.html" target="isi"><i class="fas fa-code"></i>Statment Kontrol</a></li>
+                <li><a href="lat_case.html" target="isi"><i class="fas fa-code"></i>Switch</a></li>
+                <li><a href="latfor.html" target="isi"><i class="fas fa-code"></i>Perulangan(Looping)</a></li>
+                <li><a href="latfungtion.html" target="isi"><i class="fas fa-code"></i>Function</a></li>
+                <li><a href="latobjek.html" target="isi"><i class="fas fa-code"></i>Objek</a></li>
+                </ol>
                 </li>
                 <li class="menu-item">
-                    <a href="#">Tugas Pertemuan 9</a>
-                    <ol class="submenu" type="a">
-                        <li><a href="latvar.html" target="isi">Variabel</a></li>
-                        <li><a href="latoperator.html" target="isi">Operator</a></li>
-                        <li><a href="lat_if.html" target="isi">Statment Kontrol</a></li>
-                        <li><a href="lat_case.html" target="isi">Switch</a></li>
-                        <li><a href="latfor.html" target="isi">Perulangan(Looping)</a></li>
-                        <li><a href="latfungtion.html" target="isi">Function</a></li>
-                        <li><a href="latobjek.html" target="isi">Objek</a></li>
-                    </ol>
+                <a href="#"><i class="fas fa-calculator"></i>Tugas Pertemuan 10</a>
+                <ul class="submenu">
+                <li><a href="konversi_nilai.html" target="isi"><i class="fas fa-calculator"></i>Konversi Nilai</a></li>
+                <li><a href="hargajumlahinput.html" target="isi"><i class="fas fa-shopping-cart"></i>Diskon Pembelian</a></li>
+                <li><a href="gaji.html" target="isi"><i class="fas fa-dollar-sign"></i>Perhitungan Gaji</a></li>
+                <li><a href="penerimaan_pegawai.html" target="isi"><i class="fas fa-user"></i>Penerimaan Pegawai</a></li>
+                <li><a href="billingonline.html" target="isi"><i class="fas fa-shopping-cart"></i>Billing Online</a></li>
+                <li><a href="zodiak.html" target="isi"><i class="fas fa-horoscope"></i>Zodiak</a></li>
+                </ul>
                 </li>
                 <li class="menu-item">
-                    <a href="#">Tugas Pertemuan 10</a>
-                    <ul class="submenu">
-                        <li><a href="konversi_nilai.html" target="isi">konversi Nilai</a></li>
-                        <li><a href="hargajumlahinput.html" target="isi">Diskon Pembelian</a></li>
-                        <li><a href="gaji.html" target="isi">Perhitungan Gaji</a></li>
-                        <li><a href="penerimaan_pegawai.html" target="isi">Penerimaan Pegawai</a></li>
-                        <li><a href="billingonline.html" target="isi">Billing Online</a></li>
-                        <li><a href="zodiak.html" target="isi">Zodiak</a></li>
-                    </ul>
+                <a href="#"><i class="fas fa-image"></i>Tugas Pertemuan 11</a>
+                <ul class="submenu">
+                <li><a href="tugas/gambar.html" target="isi"><i class="fas fa-image"></i>Kosong</a></li>
+                <li><a href="tugas/font.html" target="isi"><i class="fas fa-font"></i>Kosong</a></li>
+                <li><a href="tugas/link.html" target="isi"><i class="fas fa-link"></i>Kosong</a></li>
+                </ul>
                 </li>
                 <li class="menu-item">
-                    <a href="#">Tugas Pertemuan 11</a>
-                    <ul class="submenu">
-                        <li><a href="tugas/gambar.html" target="isi">kosong</a></li>
-                        <li><a href="tugas/font.html" target="isi">kosong</a></li>
-                        <li><a href="tugas/link.html" target="isi">kosong</a></li>
-                    </ul>
+                <a href="#"><i class="fas fa-list-ol"></i>Tugas Pertemuan 12</a>
+                <ul class="submenu">
+                <li><a href="#" target="isi"><i class="fas fa-list-ol"></i>Kosong</a></li>
+                <li><a href="#" target="isi"><i class="fas fa-list-ol"></i>Kosong</a></li>
+                <li><a href="#" target="isi"><i class="fas fa-list-ol"></i>Kosong</a></li>
+                </ul>
                 </li>
                 <li class="menu-item">
-                    <a href="#">Tugas Pertemuan 12</a>
-                    <ul class="submenu">
-                        <li><a href=".html" target="isi">kosong</a></li>
-                        <li><a href=".html" target="isi">kosong</a></li>
-                        <li><a href=".html" target="isi">kosong</a></li>
-                    </ul>
+                <a href="#"><i class="fas fa-table"></i>Tugas Pertemuan 13</a>
+                <ul class="submenu">
+                <li><a href="#" target="isi"><i class="fas fa-table"></i>Kosong</a></li>
+                <li><a href="#" target="isi"><i class="fas fa-table"></i>Kosong</a></li>
+                <li><a href="#" target="isi"><i class="fas fa-table"></i>Kosong</a></li>
+                </ul>
                 </li>
                 <li class="menu-item">
-                    <a href="#">Tugas Pertemuan 13</a>
-                    <ul class="submenu">
-                    <li><a href=".html" target="isi">kosong</a></li>
-                        <li><a href=".html" target="isi">kosong</a></li>
-                        <li><a href=".html" target="isi">koosng</a></li>
-                    </ul>
+                <a href="#"><i class="fas fa-file-alt"></i>Tugas Pertemuan 14</a>
+                <ul class="submenu">
+                <li><a href="#" target="isi"><i class="fas fa-file-alt"></i>Kosong</a></li>
+                <li><a href="#" target="isi"><i class="fas fa-file-alt"></i>Kosong</a></li>
+                <li><a href="#" target="isi"><i class="fas fa-file-alt"></i>Kosong</a></li>
+                </ul>
                 </li>
                 <li class="menu-item">
-                    <a href="#">Tugas Pertemuan 14</a>
-                    <ul class="submenu">
-                        <li><a href=".html" target="isi">kosong</a></li>
-                        <li><a href=".html" target="isi">kosong</a></li>
-                        <li><a href=".html" target="isi">kosong</a></li>
-                    </ul>
-               
-                <li class="menu-item">
-                    <a href="#">Tugas Pertemuan 15</a>
-                    <ul class="submenu">
-                        <li><a href=".html" target="isi">koosng</a></li>
-                        <li><a href=".html" target="isi">kosong</a></li>
-                        <li><a href=".html" target="isi">kosong</a></li>
-                    </ul>
-                   
+                <a href="#"><i class="fas fa-desktop"></i>Tugas Pertemuan 15</a>
+                <ul class="submenu">
+                <li><a href="#" target="isi"><i class="fas fa-desktop"></i>Kosong</a></li>
+                <li><a href="#" target="isi"><i class="fas fa-desktop"></i>Kosong</a></li>
+                <li><a href="#" target="isi"><i class="fas fa-desktop"></i>Kosong</a></li>
+                </ul>
                 </li>
                 <li class="menu-item">
-                    <a href="#">Tugas Pertemuan 16</a>
-                    <ul class="submenu">
-                        <li><a href=".html" target="isi">kosong</a></li>
-                        <li><a href=".html" target="isi">kosong </a></li>
-                        <li><a href=".html" target="isi">kosong</a></li>
-                    </ul>
-                    
+                <a href="#"><i class="fas fa-code"></i>Tugas Pertemuan 16</a>
+                <ul class="submenu">
+                <li><a href="#" target="isi"><i class="fas fa-code"></i>Kosong</a></li>
+                <li><a href="#" target="isi"><i class="fas fa-code"></i>Kosong</a></li>
+                <li><a href="#" target="isi"><i class="fas fa-code"></i>Kosong</a></li>
+                </ul>
                 </li>
-            
-    </ul> 
-</div>
+                </ul>
+</div>             
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
