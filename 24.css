@@ -153,7 +153,7 @@ hr {
 .social-icons {
   display: flex; /* Mengatur tampilan menjadi flexbox */
   justify-content: center; /* Mengatur konten untuk dipusatkan secara horizontal */
-  margin-top: 20px; /* Margin atas */
+  margin-top: 5px; /* Margin atas */
 }
 
 .social-icons a {
@@ -161,4 +161,55 @@ hr {
   font-size: 20px; /* Ukuran ikon */
   margin: 0 10px; /* Margin */
   transition: color 0.3s ease,
+}
+
+.social-icons a:hover .fa-tiktok {
+  color: #69c9d0; /* Ganti warna ikon TikTok saat di-hover */
+}
+.social-icons a {
+  color: #333; /* Warna default ikon */
+  font-size: 24px; /* Ukuran ikon */
+  margin: 0 10px; /* Jarak antar ikon */
+}
+
+.social-icons a .fa-facebook-square {
+  color: #3b5998; /* Warna khas Facebook */
+}
+
+.social-icons a .fa-instagram-square {
+  color: #bc2a8d; /* Warna asli Instagram */
+}
+
+
+.social-icons a:hover {
+  opacity: 0.7; /* Opacity saat di-hover */
+  color: #ff8f00;
+}
+.social-icons a .fa-tiktok {
+  color: #000; /* Ganti warna ikon TikTok */
+}
+/* Media query untuk layar berukuran kecil (misalnya ponsel) */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    .profile-info img {
+        width: 80px;
+        height: 80px;
+        margin-right: 10px;
+    }
+}
+
+/* Media query untuk layar berukuran sedang (misalnya tablet) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        max-width: 80%;
+    }
+}
+
+/* Media query untuk layar berukuran besar (misalnya desktop) */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1200px;
+    }
 }
