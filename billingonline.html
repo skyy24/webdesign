@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Billing Online</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #ece9e6, #ffffff);
+            background: linear-gradient(135deg, #b7d8cf, #dae2df);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -22,7 +23,7 @@
             max-width: 400px;
             padding: 40px;
             border-radius: 20px;
-            background-color: #ffffff;
+            background-color: #fff;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
             text-align: center;
             transition: transform 0.3s ease-in-out;
@@ -34,9 +35,23 @@
 
         h2 {
             color: #333;
-            font-size: 24px;
+            font-size: 28px;
             margin-bottom: 30px;
             text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h2 i {
+            margin-right: 10px;
+            font-size: 32px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         input[type="number"], input[type="submit"] {
@@ -47,6 +62,7 @@
             border-radius: 30px;
             box-sizing: border-box;
             transition: all 0.3s ease;
+            font-size: 16px;
         }
 
         input[type="number"] {
@@ -61,15 +77,16 @@
         }
 
         input[type="submit"] {
-            background: linear-gradient(90deg, #a1c4fd, #c2e9fb);
+            background: linear-gradient(90deg, #56CCF2, #2F80ED);
             color: #fff;
             font-weight: bold;
             border: none;
             cursor: pointer;
+            font-size: 18px;
         }
 
         input[type="submit"]:hover {
-            background: linear-gradient(90deg, #c2e9fb, #a1c4fd);
+            background: linear-gradient(90deg, #2F80ED, #56CCF2);
         }
 
         #result {
@@ -80,12 +97,13 @@
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
             color: #333;
             font-weight: bold;
+            font-size: 16px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>Billing Online</h2>
+        <h2><i class="fas fa-file-invoice-dollar"></i> Billing Online</h2>
         <form id="inputForm">
             <input type="number" id="seconds" placeholder="Masukkan Jumlah Detik" min="45">
             <input type="submit" value="Hitung Tagihan">
@@ -93,6 +111,7 @@
         <div id="result"></div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
     <script>
         document.getElementById("inputForm").addEventListener("submit", function(event) {
             event.preventDefault();
