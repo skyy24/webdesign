@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Header</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
             margin: 0;
@@ -9,6 +10,7 @@
             background-color: #333; 
             color: white; 
             overflow: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Ganti font */
         }
         .header-container {
             display: flex;
@@ -19,6 +21,7 @@
         .logo {
             display: flex;
             align-items: center;
+            
         }
         .logo img {
             height: 70px;
@@ -26,6 +29,7 @@
         }
         .logo-text {
             font-size: 35px;
+            font-family: Arial, sans-serif; /* Menjaga font STMIK KAPUTAMA */
         }
         .logo-text b {
             font-weight: bold;
@@ -36,16 +40,54 @@
         .logo-text:hover {
             color: #ff9800; 
         }
+        .date-time {
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            
+        }
+        .date-time i {
+            margin-right: 5px;
+            animation: spin 2s infinite linear;
+            color: #ff9900; /* Warna ikon */
+        }
+
+        .date-time span {
+            transition: color 0.3s ease;
+        }
+
+        .date-time span:hover {
+            color: #ff9800;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
     </style>
 </head>
 <body>
     <div class="header-container">
         <div class="logo">
-            <img src="kaputama.png" alt="Logo STMIK KAPUTAMA" height="70">
+            <img src="kaputama.png" alt="Logo STMIK KAPUTAMA" height="50">
             <div class="logo-text">
                 <span>STMIK</span> <b>KAPUTAMA</b>
             </div>
         </div>
+        <div class="date-time">
+            <i class="far fa-clock"></i> <span id="datetime"></span>
+        </div>
     </div>
+    <script>
+        function updateDateTime() {
+            var dt = new Date();
+            document.getElementById("datetime").innerHTML = dt.toLocaleString();
+        }
+        setInterval(updateDateTime, 1000);
+    </script>
 </body>
 </html>
