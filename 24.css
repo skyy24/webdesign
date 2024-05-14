@@ -28,9 +28,9 @@ body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(135deg, #f2f2f2, #333333); /* Mengubah warna latar belakang */
+  background: linear-gradient(135deg, #f2f2f2, #333333);
   overflow-x: hidden;
-  color: #333; /* Mengubah warna teks utama */
+  color: #333;
 }
 
 /* Container Profil */
@@ -43,15 +43,17 @@ body {
 
 /* Kontainer */
 .container {
-  width: 30%;
-  background: linear-gradient(135deg, #fff 40%, #e0e0e0 60%); /* Mengubah warna latar belakang */
+  width: 300px;
+  background: linear-gradient(135deg, #fff 40%, #e0e0e0 60%);
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 20px rgba(245, 3, 3, 0.3);
   margin: 20px;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-radius 0.3s ease-in-out;
+  ;
   animation: fadeIn 1s ease forwards;
   overflow-x: hidden;
+  text-align: center; /* Center align all content */
 }
 
 .container:hover {
@@ -61,16 +63,12 @@ body {
 
 /* Judul Profil */
 .profile-title {
-  text-align: center;
   margin-top: 0;
-  color: #ff8f00; /* Mengubah warna judul profil */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  color: #ff8f00;
+  text-shadow: 2px 2px 4px rgba(204, 15, 15, 0.4);
   font-weight: 600;
   font-size: 20px;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  animation: none; /* Matikan animasi pulsasi */
-  font-family: 'Open Sans', sans-serif; /* Mengubah font judul profil */
 }
 
 /* Gambar Profil */
@@ -94,6 +92,7 @@ body {
 /* Info Tambahan */
 .info {
   flex: 1;
+  text-align: left; /* Align additional info to the left */
 }
 
 /* Judul Kontak dan Alamat */
@@ -101,7 +100,7 @@ h2 {
   margin-bottom: 5px;
   animation: fadeIn 1s ease forwards;
   transition: color 0.3s ease;
-  color: #ff8f00; /* Mengubah warna judul kontak dan alamat */
+  color: #ff8f00;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -111,7 +110,7 @@ h2 {
 /* Paragraf */
 p {
   margin: 5px 0;
-  color: #666; /* Mengubah warna paragraf */
+  color: #666;
   animation: fadeIn 1s ease forwards;
   transition: color 0.3s ease;
   font-size: 14px;
@@ -128,7 +127,7 @@ p {
 /* Garis Horizontal */
 hr {
   border: none;
-  border-top: 1px solid #ccc; /* Mengubah warna garis horizontal */
+  border-top: 1px solid #ccc;
   margin: 20px 0;
 }
 
@@ -157,3 +156,4 @@ hr {
 .social-icons a .fa-tiktok {
   color: #000;
 }
+
