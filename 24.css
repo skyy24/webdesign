@@ -31,6 +31,10 @@ body {
   background: linear-gradient(135deg, #f2f2f2, #333333);
   overflow-x: hidden;
   color: #333;
+  background-image: url('rame.jpg'); /* Tambahkan gambar latar belakang */
+  background-size: cover;
+  background-position: center;
+
 }
 
 /* Container Profil */
@@ -47,25 +51,29 @@ body {
   background: linear-gradient(135deg, #fff 40%, #e0e0e0 60%);
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(245, 3, 3, 0.3);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   margin: 20px;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-radius 0.3s ease-in-out;
   ;
   animation: fadeIn 1s ease forwards;
   overflow-x: hidden;
   text-align: center; /* Center align all content */
+  background-image: url('rame.jpg'); /* Tambahkan gambar latar belakang */
+  background-size: cover;
+  background-position: center;
 }
 
 .container:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 30px rgba(0, 255, 13, 0.4);
 }
+
 
 /* Judul Profil */
 .profile-title {
   margin-top: 0;
-  color: #ff8f00;
-  text-shadow: 2px 2px 4px rgba(204, 15, 15, 0.4);
+  color: #1eff00;
+  text-shadow: 2px 2px 4px rgba(0, 255, 17, 0.4);
   font-weight: 600;
   font-size: 20px;
   text-transform: uppercase;
@@ -79,12 +87,12 @@ body {
   margin-right: 20px;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out ,box-shadow 0.3s ease-in-out, border-radius 0.3s ease-in-out;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  border: 1px solid #ff8f00;
+  border: 1px solid #1eff00;
 }
 
 .profile-info img:hover {
   animation: rotate 1s ease-in-out infinite;
-  box-shadow: 0 0 20px rgba(255, 165, 0, 0.5);
+  box-shadow: 0 0 20px rgba(26, 255, 1, 0.5);
   transform: scale(1.1);
   border-radius: 10%;
 }
@@ -100,7 +108,7 @@ h2 {
   margin-bottom: 5px;
   animation: fadeIn 1s ease forwards;
   transition: color 0.3s ease;
-  color: #ff8f00;
+  color: #1eff00;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -110,19 +118,13 @@ h2 {
 /* Paragraf */
 p {
   margin: 5px 0;
-  color: #666;
+  color: #ffffff;
   animation: fadeIn 1s ease forwards;
   transition: color 0.3s ease;
   font-size: 14px;
 }
 
-/* Hover Efek pada Kontainer */
-.container:hover h2,
-.container:hover p,
-.container:hover .contact h2,
-.container:hover .address h2 {
-  color: #ff8f00;
-}
+
 
 /* Garis Horizontal */
 hr {
