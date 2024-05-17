@@ -29,7 +29,7 @@ body {
   margin: 0;
   padding: 0;
   background: linear-gradient(135deg, #f2f2f2, #333333);
-  overflow-x: hidden;
+  overflow: hidden;
   color: #333;
   background-image: url('rame.jpg'); /* Tambahkan gambar latar belakang */
   background-size: cover;
@@ -52,7 +52,7 @@ body {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-  margin: 20px;
+  margin: 32px;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-radius 0.3s ease-in-out;
   ;
   animation: fadeIn 1s ease forwards;
