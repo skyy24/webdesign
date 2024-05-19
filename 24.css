@@ -48,7 +48,7 @@ body {
 /* Kontainer */
 .container {
   width: 300px;
-  background: linear-gradient(135deg, #fff 40%, #e0e0e0 60%);
+  background: transparent;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
@@ -58,9 +58,7 @@ body {
   animation: fadeIn 1s ease forwards;
   overflow-x: hidden;
   text-align: center; /* Center align all content */
-  background-image: url('rame.jpg'); /* Tambahkan gambar latar belakang */
-  background-size: cover;
-  background-position: center;
+  backdrop-filter: blur;
 }
 
 .container:hover {
@@ -93,8 +91,7 @@ body {
 .profile-info img:hover {
   animation: rotate 1s ease-in-out infinite;
   box-shadow: 0 0 20px rgba(26, 255, 1, 0.5);
-  transform: scale(1.1);
-  border-radius: 10%;
+  
 }
 
 /* Info Tambahan */
