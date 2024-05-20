@@ -118,8 +118,15 @@
             var seconds = parseInt(document.getElementById("seconds").value);
             var pulses = Math.ceil(seconds / 45);
             var bill = pulses * 30;
+
+            var hours = Math.floor(seconds / 3600);
+            var minutes = Math.floor((seconds % 3600) / 60);
+            var remainingSeconds = seconds % 60;
+
+            var timeString = hours + " jam " + minutes + " menit " + remainingSeconds + " detik";
+
             var resultDiv = document.getElementById("result");
-            resultDiv.innerHTML = "Jumlah Pulsa: " + pulses + "<br>Tagihan: Rp " + bill;
+            resultDiv.innerHTML = "Jumlah Pulsa: " + pulses + "<br>Tagihan: Rp " + bill + "<br>Durasi: " + timeString;
         });
     </script>
 </body>
