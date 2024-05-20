@@ -3,22 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Operasi Matematika</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .result {
+            font-size: 24px;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease;
+        }
+        .result i {
+            margin-right: 10px;
+            color: #007bff;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
 </head>
 <body>
-    <script type="text/javascript">
-        var a,b,tambah,kurang,kali,bagi,sisabagi;
-        a=6; b=3;
-        tambah=a+b;
-        kurang=a-b;
-        kali=a*b;
-        bagi=a/b;
-        sisabagi=a%b;
-        document.write("Hasil Tambah:"+tambah+"<br>");
-        document.write("Hasil Pengurangan:"+kurang+"<br>");
-        document.write("Hasil Perkalian:"+kali+"<br>");
-        document.write("Hasil Bagi:"+bagi+"<br>");
-        document.write("Hasil MOD:"+sisabagi+"<br>");
+    <div class="container">
+        <script type="text/javascript">
+            var a, b, tambah, kurang, kali, bagi, sisabagi;
+            a = 6;
+            b = 3;
+            tambah = a + b;
+            kurang = a - b;
+            kali = a * b;
+            bagi = a / b;
+            sisabagi = a % b;
+
+            document.write("<div class='result'><i class='fas fa-plus'></i>Hasil Tambah: " + tambah + "</div>");
+            document.write("<div class='result'><i class='fas fa-minus'></i>Hasil Pengurangan: " + kurang + "</div>");
+            document.write("<div class='result'><i class='fas fa-times'></i>Hasil Perkalian: " + kali + "</div>");
+            document.write("<div class='result'><i class='fas fa-divide'></i>Hasil Bagi: " + bagi + "</div>");
+            document.write("<div class='result'><i class='fas fa-percent'></i>Hasil MOD: " + sisabagi + "</div>");
         </script>
+    </div>
 </body>
 </html>
