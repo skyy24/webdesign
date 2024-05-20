@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-           body {
+        body {
             font-family: 'Montserrat', sans-serif;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
             margin: 0;
             padding: 0;
             display: flex;
@@ -17,9 +17,9 @@
             align-items: center;
             height: 100vh;
         }
-
+    
         form {
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.5);
             backdrop-filter: blur(10px);
             border-radius: 20px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
@@ -28,21 +28,21 @@
             max-width: 500px;
             width: 100%;
         }
-
+    
         label {
             display: block;
             margin-bottom: 15px;
             font-weight: bold;
-            color: #fff;
+            color: #333; /* Ubah warna teks label */
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
         }
-
+    
         input[type="number"] {
             padding: 12px 12px 12px 40px;
             border-radius: 10px;
             border: none;
-            background-color: rgba(255, 255, 255, 0.3);
-            color: #fff;
+            background-color: rgba(255, 255, 255, 0.7); /* Ubah opacity */
+            color: #333; /* Ubah warna teks input */
             width: calc(100% - 60px); /* width - padding */
             margin-bottom: 25px;
             display: inline-block;
@@ -50,55 +50,56 @@
             box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
             position: relative;
         }
-
+    
         input[type="number"]::placeholder {
-            color: #ddd;
+            color: #999; /* Ubah warna placeholder */
         }
-
+    
         input[type="number"]:focus {
             outline: none;
-            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1); /* Ubah warna shadow saat focus */
         }
-
+    
         .input-icon {
             position: absolute;
             left: 12px;
             top: 50%;
             transform: translateY(-50%);
-            color: #ddd;
+            color: #999; /* Ubah warna ikon */
         }
-
+    
         button[type="submit"] {
             padding: 14px 30px;
             border: none;
             border-radius: 10px;
-            background: linear-gradient(90deg, #ff9966, #ff5e62);
+            background: linear-gradient(90deg, #ffb266, #ff7f62); /* Ubah warna gradient */
             color: white;
             font-size: 18px;
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
-
+    
         button[type="submit"]:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
-
+    
         #totalGaji {
             margin-top: 30px;
             font-weight: bold;
             font-size: 24px;
-            color: #fff;
+            color: #333; /* Ubah warna teks hasil */
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
         }
-
+    
         .result-details {
             text-align: left;
             margin-top: 20px;
-            color: #fff;
+            color: #333; /* Ubah warna teks detail */
         }
     </style>
+    
 </head>
 <body>
 
