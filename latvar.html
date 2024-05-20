@@ -3,16 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Data Pribadi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding-top: 50px;
+            animation: colorChange 5s infinite alternate; /* Animasi perubahan warna latar belakang */
+        }
+        h1 {
+            color: #333;
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+        p {
+            color: #666;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .icon {
+            color: #007bff; /* Warna ikon */
+            font-size: 48px; /* Ukuran ikon */
+            margin-bottom: 20px; /* Jarak antara ikon dan teks */
+            animation: rotateIcon 2s linear infinite; /* Animasi rotasi ikon */
+        }
+ 
+        
+    </style>
 </head>
-<body> <script type="text/javascript">
-var a,b,usia;
-a="Nama:";
-b="Richard";
-usia=3;
-document.write(a);
-document.write(b);
-document.write("Usia:"+usia+"Tahun");
-</script>
+<body>
+    <div class="container">
+        <h1>Data Pribadi</h1>
+        <p id="demo"></p>
+        <i class="fas fa-user icon"></i> <!-- Ikon pengguna -->
+    </div>
+
+    <script>
+        var a, b, usia;
+        a = "Nama: ";
+        b = "Richard";
+        usia = 3;
+        document.getElementById("demo").innerHTML = a + b + "<br>Usia: " + usia + " Tahun";
+    </script>
 </body>
 </html>
