@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Input Nilai</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,49 +16,83 @@
             align-items: center;
             height: 100vh;
         }
-
         .container {
             background-color: #fff;
-            padding: 20px;
+            padding: 40px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             text-align: center;
+            animation: fadeIn 1s ease;
         }
-
         input[type="button"] {
             padding: 10px 20px;
             font-size: 16px;
-            background-color: #007bff;
+            background-color: #28a745;
             color: #fff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s;
         }
-
         input[type="button"]:hover {
-            background-color: #0056b3;
+            background-color: #218838;
+        }
+        input[type="number"] {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        .icon {
+            color: #28a745;
+            font-size: 48px;
+            margin-bottom: 20px;
+            animation: rotateIcon 2s linear infinite;
+        }
+        .result {
+            font-size: 24px;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+        }
+        .result i {
+            margin-right: 10px;
+            color: #28a745;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+      
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <i class="fas fa-edit icon"></i>
         <h2>Selamat Datang!</h2>
         <p>Silakan masukkan nilai Anda:</p>
         <form>
-            <input type="number" id="nilaiInput" placeholder="Masukkan Nilai Anda" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+            <input type="number" id="nilaiInput" placeholder="Masukkan Nilai Anda">
             <br><br>
             <input type="button" value="Klik" onclick="nilai()" />
         </form>
     </div>
-
     <script>
         function nilai() {
             var nilai = document.getElementById("nilaiInput").value;
             if(nilai === "") {
                 alert("Silakan masukkan nilai terlebih dahulu!");
             } else {
-                document.write("<h2>Nilai Anda Adalah: " + nilai + "</h2>");
+                document.body.innerHTML = "<div class='container'><i class='fas fa-check-circle icon'></i><div class='result'><i class='fas fa-star'></i>Nilai Anda Adalah: " + nilai + "</div></div>";
             }
         }
     </script>
