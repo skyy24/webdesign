@@ -4,15 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perhitungan Gaji</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
-
-        body {
-            font-family: 'Nunito', sans-serif;
-            background: linear-gradient(135deg, #292E49, #536976);
-            color: #fff;
+           body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
             margin: 0;
             padding: 0;
             display: flex;
@@ -21,112 +18,156 @@
             height: 100vh;
         }
 
-        .container {
-            background: linear-gradient(135deg, #141E30, #243B55);
+        form {
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
             padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
             text-align: center;
             max-width: 500px;
             width: 100%;
-            backdrop-filter: blur(10px);
-            transition: box-shadow 0.3s ease;
-        }
-
-        .container:hover {
-            box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
-        }
-
-        h2 {
-            color: #fff;
-            margin-bottom: 30px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         label {
             display: block;
-            margin-bottom: 10px;
-            text-align: left;
+            margin-bottom: 15px;
+            font-weight: bold;
             color: #fff;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
         }
 
-        input {
-            padding: 12px 20px;
-            margin-bottom: 20px;
-            border: 2px solid rgba(255, 255, 255, 0.5);
-            border-radius: 5px;
-            background-color: rgba(255, 255, 255, 0.2);
-            color: #fff;
-            width: 100%;
-            box-sizing: border-box;
-            transition: border-color 0.3s ease;
-        }
-
-        input::placeholder {
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        input:focus {
-            outline: none;
-            border-color: rgba(255, 255, 255, 0.8);
-        }
-
-        button {
-            padding: 12px 24px;
-            background: linear-gradient(to right, #FF416C, #FF4B2B);
-            color: #fff;
+        input[type="number"] {
+            padding: 12px 12px 12px 40px;
+            border-radius: 10px;
             border: none;
-            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.3);
+            color: #fff;
+            width: calc(100% - 60px); /* width - padding */
+            margin-bottom: 25px;
+            display: inline-block;
+            font-size: 16px;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        input[type="number"]::placeholder {
+            color: #ddd;
+        }
+
+        input[type="number"]:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #ddd;
+        }
+
+        button[type="submit"] {
+            padding: 14px 30px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #ff9966, #ff5e62);
+            color: white;
+            font-size: 18px;
             cursor: pointer;
-            font-weight: 600;
-            transition: box-shadow 0.3s ease, background 0.3s ease;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
 
-        button:hover {
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            background: linear-gradient(to right, #FF4B2B, #FF416C);
+        button[type="submit"]:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
 
-        #hasil {
+        #totalGaji {
             margin-top: 30px;
             font-weight: bold;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            font-size: 24px;
+            color: #fff;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .result-details {
+            text-align: left;
+            margin-top: 20px;
+            color: #fff;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h2>Perhitungan Gaji <i class="fas fa-money-bill-wave"></i></h2>
-        <label for="jamKerja">Jumlah Jam Kerja:</label>
-        <input type="number" id="jamKerja" placeholder="Masukkan jumlah jam kerja" required>
-        <button onclick="hitungGaji()">Hitung Gaji <i class="fas fa-calculator"></i></button>
-        <div id="hasil"></div>
-    </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
-    <script>
-        function hitungGaji() {
-            const jamKerja = parseInt(document.getElementById("jamKerja").value);
-            const gajiHarian = 50000;
-            let gajiLembur = 0;
-            let bonus = 0;
+<form id="gajiForm" action="#">
+    <label for="hariKerja">Jumlah Hari Kerja:</label>
+    <input type="number" id="hariKerja" name="hariKerja" required placeholder="Masukkan jumlah hari kerja">
+    <label for="jamLembur">Jumlah Jam Lembur:</label>
+    <input type="number" id="jamLembur" name="jamLembur" required placeholder="Masukkan jumlah jam lembur">
+    <i class="fas fa-clock input-icon"></i>
+    <button type="submit"><i class="fas fa-calculator"></i> Hitung Total Gaji</button>
+    <div id="totalGaji"></div>
+    <div class="result-details" id="resultDetails"></div>
+</form>
 
-            if (jamKerja <= 8) {
-                gajiLembur = 0;
-            } else if (jamKerja > 8 && jamKerja <= 10) {
-                gajiLembur = (jamKerja - 8) * 25000;
-            } else {
-                gajiLembur = 2 * 25000 + (jamKerja - 10) * 35000;
-            }
+<script>
+    document.getElementById("gajiForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        
+        var hariKerja = parseInt(document.getElementById("hariKerja").value);
+        var jamLembur = parseInt(document.getElementById("jamLembur").value);
+        
+        var hasil = hitungTotalGaji(hariKerja, jamLembur);
+        var resultDetails = generateResultDetails(hasil);
+        
+        document.getElementById("totalGaji").innerHTML = "Total Gaji: " + formatRupiah(hasil.totalGaji.toFixed(2));
+        document.getElementById("resultDetails").innerHTML = resultDetails;
+    });
 
-            if (jamKerja >= 20) {
-                bonus = 5000;
-            }
-
-            const gajiTotal = gajiHarian + gajiLembur + bonus;
-            document.getElementById("hasil").innerHTML = `Gaji Total: Rp ${gajiTotal.toLocaleString()}`;
+    function hitungTotalGaji(hariKerja, jamLembur) {
+        var gajiPerHari = 50000;
+        var gajiHarian = hariKerja * gajiPerHari;
+        
+        var tarifLembur = 0;
+        if (jamLembur >= 1 && jamLembur < 3) {
+            tarifLembur = 25000;
+        } else if (jamLembur >= 3) {
+            tarifLembur = 35000;
         }
-    </script>
+        var gajiLembur = jamLembur * tarifLembur;
+        
+        var bonusMakan = 0;
+        if (hariKerja >= 20) {
+            bonusMakan = 5000 * hariKerja;
+        }
+        
+        var totalGaji = gajiHarian + gajiLembur + bonusMakan;
+        return {
+            totalGaji: totalGaji,
+            gajiHarian: gajiHarian,
+            gajiLembur: gajiLembur,
+            bonusMakan: bonusMakan
+        };
+    }
+
+    function generateResultDetails(hasil) {
+        var details = "<h3>Rincian Gaji:</h3>";
+        details += "<p>Uang Harian: " + formatRupiah(hasil.gajiHarian.toFixed(2)) + "</p>";
+        details += "<p>Uang Lembur: " + formatRupiah(hasil.gajiLembur.toFixed(2)) + "</p>";
+        details += "<p>Uang Makan: " + formatRupiah(hasil.bonusMakan.toFixed(2)) + "</p>";
+        return details;
+    }
+
+    function formatRupiah(angka) {
+        var reverse = angka.toString().split('').reverse().join(''),
+            ribuan = reverse.match(/\d{1,3}/g);
+        ribuan = ribuan.join('.').split('').reverse().join('');
+        return 'Rp ' + ribuan;
+    }
+</script>
+
 </body>
 </html>
