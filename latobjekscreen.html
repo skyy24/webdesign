@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        form {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        input[type="button"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <script type="text/javascript">
+        function ukuranlayar() {
+            var p, l; 
+            p = screen.height; 
+            l = screen.width; 
+            document.write("Panjang Layar: " + p + " px" + "<br>"); 
+            document.write("Lebar Layar: " + l + " px"); 
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <input type="button" value="Klik" onclick="ukuranlayar()" />
+    </form>
+</body>
+</html>
