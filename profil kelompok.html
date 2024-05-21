@@ -6,9 +6,105 @@
     <title>Profil Mahasiswa</title>
     <link rel="stylesheet" href="24.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Animasi Fade In */
+        @keyframes fadeIn {
+          0% {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        /* Animasi Pulse */
+        @keyframes pulse {
+          0% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(1.1);
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+
+        /* Loading Animation */
+        @keyframes startLoading {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+       .loader-container {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #333; /* Ubah warna latar belakang menjadi #333 */
+            z-index: 9999;
+        }
+        .loading-container {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .loading-line-container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            position: relative;
+            width: 40%;
+            height: 20px;
+            border: 2px solid rgba(32, 186, 230, .5);
+            border-radius: 20px;
+            padding: 2px;
+            box-sizing: content-box;
+            transition: box-shadow .5s;
+        }
+        .loading-line {
+            width: 0%;
+            height: inherit;
+            border-radius: inherit;
+            background-image: linear-gradient(135deg, rgb(32, 186, 230), rgb(110, 6, 173));
+            opacity: .8;
+            animation-name: startLoading;
+            animation-fill-mode: forwards;
+            animation-iteration-count: 1;
+            animation-duration: 4s;
+            animation-timing-function: cubic-bezier(0, 0, 0, 0);
+        }
+        .loading-percent {
+            position: absolute;
+            top: 46%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            z-index: 999;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: .9rem;
+            opacity: .9;
+        }
+    </style>
 </head>
 <body>
-    <div class="profile-container">
+    <div class="loader-container">
+        <div class="loading-container">
+            <div class="loading-line-container">
+                <span class="loading-percent">0%</span>
+                <div class="loading-line"></div>
+            </div>
+        </div>
+    </div>
+
+      <div class="profile-container">
         <div class="container">
             <h1 class="profile-title">Profil Mahasiswa 1</h1>
             <div class="profile-info">
@@ -63,5 +159,23 @@
             </div>
         </div>
     </div>
+
+    <script>
+        const loadingPercent = document.querySelector(".loading-percent");
+        const loadingLine = document.querySelector(".loading-line");
+
+        var percent = 0;
+        var loop = setInterval(() => {
+            if (percent < 100) {
+                percent++;
+                loadingPercent.innerText = `${percent}%`;
+                loadingLine.style.width = `${percent}%`;
+            } else {
+                clearInterval(loop);
+                loadingPercent.innerText = `Done !`;
+                document.querySelector(".loader-container").style.display = "none";
+            }
+        }, 40);
+    </script>
 </body>
 </html>
