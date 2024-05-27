@@ -236,10 +236,13 @@
                     event.stopPropagation();
                     submenu.classList.toggle('active');
                 });
+
+                submenu.addEventListener('click', function(event) {
+                    event.stopPropagation();
+                });
             }
         });
 
-        // Menutup submenu ketika area di luar submenu diklik
         document.addEventListener('click', function(event) {
             var submenus = document.querySelectorAll('.submenu');
             submenus.forEach(function(submenu) {
