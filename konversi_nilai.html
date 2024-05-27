@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Program Konversi Nilai</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Konversi Nilai</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
-            background: linear-gradient(45deg, #007bff, #6c757d);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #debeb2, #FA8072);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
+            color: #333;
             margin: 0;
             padding: 0;
             display: flex;
@@ -18,79 +20,94 @@
             height: 100vh;
         }
 
-        .container {
-            background-color: #fff;
-            padding: 30px;
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        form {
+            background-color: rgba(255, 255, 255, 0.9);
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            padding: 30px;
             text-align: center;
             max-width: 500px;
             width: 90%;
         }
-
         h2 {
-            color: #007bff;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            margin-top: 0;
+            color: #FA8072;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-
-        input[type="number"] {
+        h2 i {
+            margin-right: 10px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #FA8072;
+        }
+        input[type="number"], input[type="text"] {
             padding: 10px;
             border-radius: 5px;
             border: 1px solid #ccc;
-            width: 200px;
+            width: calc(100% - 24px);
+            margin-bottom: 20px;
             font-size: 16px;
         }
-
-        button {
-            background-color: #007bff;
-            color: #fff;
+        button[type="submit"] {
+            padding: 12px 24px;
             border: none;
-            padding: 10px 20px;
             border-radius: 5px;
+            background-color: #FA8072;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s;
         }
-
-        button:hover {
-            background-color: #0056b3;
+        button[type="submit"]:hover {
+            background-color: #FF7F50;
         }
-
+        #hasil {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #FA8072;
+        }
         table {
-            margin: 20px auto;
+            margin-top: 20px;
             border-collapse: collapse;
-            width: 80%;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
         }
-
         th, td {
-            padding: 12px;
+            padding: 10px;
             text-align: left;
             border-bottom: 1px solid #ddd;
         }
-
         th {
-            background-color: #007bff;
+            background-color: #FA8072;
             color: #fff;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-        tr:hover {
-            background-color: #e0e0e0;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h2>Konversi Nilai</h2>
-        <form>
-            <label for="nilaiInput">Masukkan Nilai Anda:</label>
-            <input type="number" id="nilaiInput" placeholder="Masukkan Nilai Anda" required>
-            <button type="button" onclick="konversiNilai()"><i class="fas fa-calculator"></i> Konversi</button>
-        </form>
-        <div id="hasilKonversi"></div>
+    <form id="nilaiForm" action="#">
+        <h2><i class="fas fa-graduation-cap"></i>Konversi Nilai</h2>
+        <label for="nilai">Masukkan nilai:</label>
+        <input type="number" id="nilai" name="nilai" required>
+        <button type="submit">Konversi</button>
+        <input type="text" id="hasilKonversi" name="hasilKonversi" readonly>
         <table>
             <tr>
                 <th>Nilai</th>
@@ -117,26 +134,29 @@
                 <td>E</td>
             </tr>
         </table>
-    </div>
-
+    </form>
     <script>
-        function konversiNilai() {
-            var nilai = parseInt(document.getElementById("nilaiInput").value);
-            var hasil = "";
+        document.getElementById("nilaiForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var nilai = parseInt(document.getElementById("nilai").value);
+            var hasilKonversi = konversiNilai(nilai);
+            document.getElementById("hasilKonversi").value = hasilKonversi;
+        });
+
+        function konversiNilai(nilai) {
             if (nilai >= 80 && nilai <= 100) {
-                hasil = "A";
-            } else if (nilai >= 70 && nilai <= 79) {
-                hasil = "B";
-            } else if (nilai >= 60 && nilai <= 69) {
-                hasil = "C";
-            } else if (nilai >= 50 && nilai <= 59) {
-                hasil = "D";
-            } else if (nilai >= 0 && nilai <= 49) {
-                hasil = "E";
+                return "A";
+            } else if (nilai >= 70 && nilai < 80) {
+                return "B";
+            } else if (nilai >= 60 && nilai < 70) {
+                return "C";
+            } else if (nilai >= 50 && nilai < 60) {
+                return "D";
+            } else if (nilai >= 0 && nilai < 50) {
+                return "E";
             } else {
-                hasil = "Nilai tidak valid";
+                return "Nilai tidak valid";
             }
-            document.getElementById("hasilKonversi").innerHTML = "Konversi Nilai Anda: " + hasil;
         }
     </script>
 </body>
