@@ -16,6 +16,7 @@
             height: 100vh;
             margin: 0;
             padding: 0;
+            overflow: hidden;
         }
 
         .container {
@@ -89,7 +90,7 @@
             background: linear-gradient(90deg, #2F80ED, #56CCF2);
         }
 
-        #result {
+        .output {
             margin-top: 20px;
             background-color: #f9f9f9;
             padding: 20px;
@@ -108,7 +109,16 @@
             <input type="number" id="seconds" placeholder="Masukkan Jumlah Detik" min="45">
             <input type="submit" value="Hitung Tagihan">
         </form>
-        <div id="result"></div>
+        <div class="output" id="outputSection">
+            <form>
+                <label for="pulsesOutput">Jumlah Pulsa:</label>
+                <input type="text" id="pulsesOutput" readonly><br>
+                <label for="billOutput">Tagihan:</label>
+                <input type="text" id="billOutput" readonly><br>
+                <label for="durationOutput">Durasi:</label>
+                <input type="text" id="durationOutput" readonly>
+            </form>
+        </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
@@ -125,8 +135,9 @@
 
             var timeString = hours + " jam " + minutes + " menit " + remainingSeconds + " detik";
 
-            var resultDiv = document.getElementById("result");
-            resultDiv.innerHTML = "Jumlah Pulsa: " + pulses + "<br>Tagihan: Rp " + bill + "<br>Durasi: " + timeString;
+            document.getElementById("pulsesOutput").value = pulses;
+            document.getElementById("billOutput").value = "Rp " + bill;
+            document.getElementById("durationOutput").value = timeString;
         });
     </script>
 </body>
