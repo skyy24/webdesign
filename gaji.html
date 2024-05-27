@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #FFC0CB, #FF1493); /* Ubah warna background */
+            background: linear-gradient(135deg, #FFC0CB, #FF1493); 
             margin: 0;
             padding: 0;
             display: flex;
@@ -43,7 +43,7 @@
             padding: 12px;
             border-radius: 8px;
             border: 1px solid #ccc;
-            width: calc(100% - 16px); /* width - padding */
+            width: calc(100% - 16px); 
             margin-bottom: 15px;
             display: inline-block;
         }
@@ -67,11 +67,11 @@
             border: 1px solid #ddd;
             border-radius: 16px;
             padding: 20px;
-            text-align: left; /* Adjust alignment */
+            text-align: left; 
         }
 
         .result-container p {
-            margin: 5px 0; /* Adjust margin */
+            margin: 5px 0; 
             font-weight: bold;
         }
 
@@ -89,13 +89,13 @@
     <div class="icon">
         <i class="fas fa-coins"></i>
     </div>
-    <h2 style="color: #4CAF50;">Perhitungan Gaji</h2> <!-- Tambahkan judul dengan warna yang sesuai -->
+    <h2 style="color: #4CAF50;">Perhitungan Gaji</h2> 
     <form id="gajiForm" action="#">
         <label for="hariKerja">Jumlah Hari Kerja:</label>
         <input type="number" id="hariKerja" name="hariKerja" required>
         <label for="jamLembur">Jumlah Jam Lembur:</label>
         <input type="number" id="jamLembur" name="jamLembur" required>
-        <button type="submit">Hitung Total Gaji</button>
+        <button type="submit">Hitung Total</button>
     </form>
 
     <div id="totalGaji" class="result-container" style="display: none;">
