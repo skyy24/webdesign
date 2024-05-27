@@ -3,169 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Program Penerimaan Pegawai</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <title>Syarat Penerimaan Pegawai</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-        /* Reset default styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* General styles */
         body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #56CCF2, #2F80ED);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
+            margin-top: 120px;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
         }
 
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
         .container {
-            background-color: #fff;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
             text-align: center;
-            max-width: 600px;
-            width: 100%;
+            width: 400px;
+            margin-top: 100px;
         }
 
-        .title {
-            color: #333;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-top: 400px;
-        }
-
-        .form-group {
+        form {
             margin-bottom: 20px;
-            text-align: left;
         }
 
         label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
             font-weight: bold;
-            color: #555;
+            color: #2F80ED;
         }
 
-        .form-control {
-            width: 100%;
-            padding: 12px 20px;
-            border: 1px solid #ccc;
+        input[type="text"],
+        input[type="number"],
+        select {
+            padding: 8px;
             border-radius: 5px;
-            font-size: 16px;
-            background-color: #f8f8f8;
-            transition: border-color 0.3s;
+            border: 1px solid #ccc;
+            width: calc(100% - 16px);
+            margin-bottom: 15px;
+            display: inline-block;
         }
 
-        .form-control:focus {
-            outline: none;
-            border-color: #007bff;
-        }
-
-        .btn-primary {
-            padding: 12px 24px;
-            font-size: 16px;
-            background-color: #007bff;
-            color: #fff;
+        button[type="submit"] {
+            padding: 10px 20px;
             border: none;
             border-radius: 5px;
+            background-color: #2F80ED;
+            color: white;
+            font-size: 16px;
             cursor: pointer;
             transition: background-color 0.3s;
         }
 
-        .btn-primary:hover {
-            background-color: #0056b3;
+        button[type="submit"]:hover {
+            background-color: #56CCF2;
         }
 
-        .result {
-            margin-top: 30px;
+        .result-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        .result-container p {
+            margin: 0;
             font-weight: bold;
-            color: #333;
+            color: #2F80ED;
         }
 
-        .requirements {
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
             text-align: left;
-            margin-top: 40px;
-            background-color: #f8f8f8;
-            padding: 20px;
-            border-radius: 5px;
         }
 
-        .requirements h3 {
-            color: #333;
-            margin-bottom: 10px;
+        th {
+            background-color: #2F80ED;
+            color: white;
         }
 
-        .requirements p {
-            color: #555;
+        .icon {
+            color: #2F80ED;
             margin-bottom: 10px;
+            font-size: 48px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1 class="title">Program Penerimaan Pegawai</h1>
-        <form>
-            <div class="form-group">
-                <label for="jenisKelamin">Jenis Kelamin:</label>
-                <select id="jenisKelamin" class="form-control">
-                    <option value="laki-laki">Laki-laki</option>
-                    <option value="perempuan">Perempuan</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="tinggiBadan">Tinggi Badan (cm):</label>
-                <input type="number" id="tinggiBadan" placeholder="Tinggi Badan" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="beratBadan">Berat Badan (kg):</label>
-                <input type="number" id="beratBadan" placeholder="Berat Badan" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="ipk">IPK:</label>
-                <input type="number" step="0.01" id="ipk" placeholder="IPK" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="pendidikan">Pendidikan:</label>
-                <select id="pendidikan" class="form-control">
-                    <option value="D3">D3</option>
-                    <option value="S1">S1</option>
-                </select>
-            </div>
-            <button type="button" onclick="cekKelayakan()" class="btn-primary">Cek Kelayakan</button>
-        </form>
-        <div id="hasilKelayakan" class="result"></div>
-        <div class="requirements">
-            <h3>Persyaratan Penerimaan:</h3>
-            <p>- Laki-laki: Tinggi badan 170-179 cm, Berat badan ideal (Tinggi badan - 110), IPK 3-4, Pendidikan D3/S1.</p>
-            <p>- Perempuan: Tinggi badan 160-170 cm, Berat badan ideal (Tinggi badan - 110), IPK 3-4, Pendidikan D3/S1.</p>
-        </div>
+
+<div class="container">
+    <div class="icon">
+        <i class="fas fa-user"></i>
     </div>
+    <h2>Syarat Penerimaan Pegawai</h2>
+    
+    <form id="pegawaiForm" action="#">
+        <label for="jenisKelamin">Jenis Kelamin:</label>
+        <select id="jenisKelamin" name="jenisKelamin" required>
+            <option value="">Pilih Jenis Kelamin</option>
+            <option value="laki-laki">Laki-laki</option>
+            <option value="perempuan">Perempuan</option>
+        </select>
+        <label for="tinggiBadan">Tinggi Badan (cm):</label>
+        <input type="number" id="tinggiBadan" name="tinggiBadan" required>
+        <label for="beratBadan">Berat Badan (kg):</label>
+        <input type="number" id="beratBadan" name="beratBadan" required>
+        <label for="ipk">IPK:</label>
+        <input type="number" id="ipk" name="ipk" min="0" max="4" step="0.1" required>
+        <label for="pendidikan">Pendidikan:</label>
+        <select id="pendidikan" name="pendidikan" required>
+            <option value="">Pilih Pendidikan</option>
+            <option value="D3">D3</option>
+            <option value="S1">S1</option>
+        </select>
+        <button type="submit">Cek Syarat Penerimaan</button>
+    </form>
 
-    <script>
-        function cekKelayakan() {
-            var jenisKelamin = document.getElementById("jenisKelamin").value;
-            var tinggiBadan = parseInt(document.getElementById("tinggiBadan").value);
-            var beratBadan = parseInt(document.getElementById("beratBadan").value);
-            var ipk = parseFloat(document.getElementById("ipk").value);
-            var pendidikan = document.getElementById("pendidikan").value;
-            var kelayakan = "Tidak Lulus";
+    <div id="hasil" class="result-container" style="display: none;">
+        <p id="resultText"></p>
+    </div>
+    
+    <table>
+        <tr>
+            <th>Jenis Kelamin</th>
+            <th>Tinggi Badan (cm)</th>
+            <th>Berat Badan Ideal (kg)</th>
+            <th>IPK</th>
+            <th>Pendidikan</th>
+        </tr>
+        <tr>
+            <td>Laki-laki</td>
+            <td>170-179</td>
+            <td>Tinggi Badan - 110</td>
+            <td>3-4</td>
+            <td>D3/S1</td>
+        </tr>
+        <tr>
+            <td>Perempuan</td>
+            <td>160-170</td>
+            <td>Tinggi Badan - 110</td>
+            <td>3-4</td>
+            <td>D3/S1</td>
+        </tr>
+    </table>
+</div>
 
-            if ((jenisKelamin === "laki-laki" && tinggiBadan >= 170 && tinggiBadan <= 179 && beratBadan === (tinggiBadan - 110) && ipk >= 3 && ipk <= 4 && (pendidikan === "D3" || pendidikan === "S1")) ||
-                (jenisKelamin === "perempuan" && tinggiBadan >= 160 && tinggiBadan <= 170 && beratBadan === (tinggiBadan - 110) && ipk >= 3 && ipk <= 4 && (pendidikan === "D3" || pendidikan === "S1"))) {
-                kelayakan = "Lulus";
-            }
+<script>
+    document.getElementById("pegawaiForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        
+        var jenisKelamin = document.getElementById("jenisKelamin").value;
+        var tinggiBadan = parseInt(document.getElementById("tinggiBadan").value);
+        var beratBadan = parseInt(document.getElementById("beratBadan").value);
+        var ipk = parseFloat(document.getElementById("ipk").value);
+        var pendidikan = document.getElementById("pendidikan").value;
+        
+        var hasilPemeriksaan = cekSyarat(jenisKelamin, tinggiBadan, beratBadan, ipk, pendidikan);
+        
+        document.getElementById("resultText").innerHTML = hasilPemeriksaan;
+        document.getElementById("hasil").style.display = "block";
+    });
 
-            document.getElementById("hasilKelayakan").innerHTML = "Kelayakan: " + kelayakan;
-        }
-    </script>
+    function cekSyarat(jenisKelamin, tinggiBadan, beratBadan, ipk, pendidikan) {
+        if (jenisKelamin === "laki-laki" && tinggiBadan >= 170 && tinggiBadan <= 179 &&
+            ((beratBadan >= (tinggiBadan - 110) - 2) && (beratBadan <= (tinggiBadan - 110) + 2)) &&
+            ipk >= 3 && ipk <= 4 && (pendidikan === "D3" || pendidikan === "S1")) {
+            return "Anda memenuhi syarat penerimaan pegawai.";
+        } else if (jenisKelamin === "perempuan" && tinggiBadan >=160 && tinggiBadan <= 170 &&
+((beratBadan >= (tinggiBadan - 110) - 2) && (beratBadan <= (tinggiBadan - 110) + 2)) &&
+ipk >= 3 && ipk <= 4 && (pendidikan === "D3" || pendidikan === "S1")) {
+return "Anda memenuhi syarat penerimaan pegawai.";
+} else {
+return "Maaf, Anda tidak memenuhi syarat penerimaan pegawai.";
+}
+}
+</script>
 </body>
 </html>
