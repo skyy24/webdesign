@@ -16,7 +16,7 @@
             height: 100vh;
             margin: 0;
             padding: 0;
-            overflow: hidden;
+           margin-top: 60px;
         }
 
         .container {
@@ -98,6 +98,28 @@
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
             color: #333;
             font-weight: bold;
+            font-size: 16px;
+            text-align: left; /* Align text to the left */
+        }
+
+        .output form {
+            margin-top: 10px; /* Add space between input fields */
+        }
+
+        .output label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #666;
+        }
+
+        .output input[type="text"] {
+            width: calc(100% - 40px);
+            margin-bottom: 10px;
+            padding: 12px 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
             font-size: 16px;
         }
     </style>
