@@ -85,7 +85,17 @@
     <script>
         function updateDateTime() {
             var dt = new Date();
-            document.getElementById("datetime").innerHTML = dt.toLocaleString();
+            var options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric', 
+                hour: '2-digit', 
+                minute: '2-digit', 
+                second: '2-digit' 
+            };
+            var formattedDateTime = dt.toLocaleString('id-ID', options).replace(/,/g, ',');
+            document.getElementById("datetime").innerHTML = formattedDateTime;
         }
         setInterval(updateDateTime, 1000);
     </script>
