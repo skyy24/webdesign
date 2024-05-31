@@ -4,17 +4,19 @@
     <title>DesainWeb</title>
     <link rel="icon" href="hacker (1).png" type="image/png">
     <script>
-        window.onload = function() {
+  window.onload = function() {
             var audio = new Audio('bgsound.mp3');
             audio.loop = true;
-            audio.volume = 0.1; // Mengatur volume menjadi 10% dari volume penuh
+            audio.volume = 0.1; // Mengatur volume menjadi 30% dari volume penuh
             audio.play();
         };
-    </script>
-</head>
-<body>
-    <iframe src="header.html" name="header" style="width: 100%; height: 15%; border: none;"></iframe>
-    <iframe src="menu3.html" name="menu" style="width: 17%; height: 85%; border: none; float: left;"></iframe>
-    <iframe src="profil kelompok.html" name="isi" style="width: 83%; height: 85%; border: none;"></iframe>
-</body>
+        </script>
+</head> 
+<frameset rows="15%,*%" border="">
+    <frame name="header" src="header.html">
+    <frameset cols="17%,*%">
+        <frame name="menu" src="menu3.html">
+        <frame name="isi" src="profil kelompok.html">
+    </frameset>
+</frameset>
 </html>
