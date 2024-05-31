@@ -260,6 +260,21 @@
         var clickSound = document.getElementById('clickSound');
         clickSound.play();
     }
+        // Fungsi untuk menambahkan event listener ke setiap elemen <li>
+    function addClickSoundToLiElements() {
+        var liElements = document.querySelectorAll('.menu-item a');
+
+        liElements.forEach(function(liElement) {
+            liElement.addEventListener('click', function() {
+                playClickSound(); // Panggil fungsi untuk memainkan suara klik
+            });
+        });
+    }
+
+    // Panggil fungsi untuk menambahkan event listener ke setiap elemen <li>
+    document.addEventListener("DOMContentLoaded", function() {
+        addClickSoundToLiElements();
+    });
 </script>
 
 </body>
