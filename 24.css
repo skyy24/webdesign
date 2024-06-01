@@ -1,3 +1,4 @@
+
 /* Animasi Fade In */
 @keyframes fadeIn {
   0% {
@@ -31,7 +32,7 @@ body {
   background: linear-gradient(135deg, #f2f2f2, #333333);
   overflow: hidden;
   color: #333;
-  background-image: url('rame.jpg'); /* Tambahkan gambar latar belakang */
+  background-image: url('img1.jpg'); /* Tambahkan gambar latar belakang */
   background-size: cover;
   background-position: center;
 
@@ -51,19 +52,20 @@ body {
   background: transparent;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  border:2px solid rgba(255,255,255, .2);
+  // box-shadow: 0 0 15px #0ef;
   margin: 32px;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-radius 0.3s ease-in-out;
   ;
   animation: fadeIn 1s ease forwards;
   overflow-x: hidden;
   text-align: center; /* Center align all content */
-  backdrop-filter: blur;
+  backdrop-filter: blur(20px);
 }
 
 .container:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 30px rgba(0, 255, 13, 0.4);
+  box-shadow: 0 0 20px #0ef;
 }
 
 
@@ -90,7 +92,7 @@ body {
 
 .profile-info img:hover {
   animation: rotate 1s ease-in-out infinite;
-  box-shadow: 0 0 20px rgba(26, 255, 1, 0.5);
+  box-shadow: 0 0 20px #0ef;
   
 }
 
