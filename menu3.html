@@ -226,10 +226,18 @@
 </div>             
 <audio id="clickSound" src="click.mp3" preload="auto"></audio>
 <script>
-    // Tambahkan event listener untuk setiap menu-item
+    function playClickSound() {
+        var clickSound = document.getElementById('clickSound');
+        clickSound.currentTime = 0; // Set ulang waktu putar ke 0
+        clickSound.play();
+    }
+
+    // Tambahkan event listener untuk setiap menu-item dan submenu
     document.addEventListener("DOMContentLoaded", function() {
         var menuItems = document.querySelectorAll('.menu-item');
+        var subMenus = document.querySelectorAll('.submenu a');
 
+        // Tambahkan event listener untuk setiap menu-item
         menuItems.forEach(function(item, index) {
             var submenu = item.querySelector('.submenu');
             if (submenu) {
@@ -245,6 +253,15 @@
             }
         });
 
+        // Tambahkan event listener untuk setiap submenu
+        subMenus.forEach(function(submenu, index) {
+            submenu.addEventListener('click', function(event) {
+                event.stopPropagation();
+                playClickSound(); // Panggil fungsi untuk memainkan suara klik
+            });
+        });
+
+        // Tutup submenu saat mengklik di luar submenu
         document.addEventListener('click', function(event) {
             var submenus = document.querySelectorAll('.submenu');
             submenus.forEach(function(submenu) {
@@ -254,7 +271,6 @@
             });
         });
     });
-
 </script>
 
 </body>
