@@ -6,11 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>game pacman</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: black;
+            overflow: hidden;
+            display: flex;
+            justify-content: center; /* Menengahkan konten horizontal */
+            align-items: center; /* Menengahkan konten vertikal */
+            height: 100vh; /* Mengisi tinggi layar */
+        }
+    </style>
 </head>
 
-<body style="margin: 0; background-color: black;">
+<body>
     <canvas id="canvas" width="500" height="500"></canvas>
-    <div style="display:none;">
+    <div style="display: none;">
         <img id="animation" src="animations.gif" width="140" height="20">
         <img id="ghosts" src="ghost.png" width="140" height="20">
     </div>
