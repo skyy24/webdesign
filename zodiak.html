@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
@@ -92,7 +93,7 @@
 </head>
 <body>
     <div class="container">
-        <h2>Game Zodiak</h2>
+        <h2><i class="fas fa-star"></i> Game Zodiak <i class="fas fa-star"></i></h2>
         <form id="inputForm">
             <select id="month">
                 <option value="1">Januari</option>
@@ -122,6 +123,7 @@
         </div>
     </div>
 
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script>
         document.getElementById("inputForm").addEventListener("submit", function(event) {
             event.preventDefault();
