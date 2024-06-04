@@ -127,3 +127,15 @@ function play(){
     }
     requestAnimationFrame(create_pipe);
 }
+document.addEventListener('touchstart', (e) => {
+    if(game_state != 'Play') return;
+    
+    img.src = 'Bird-2.png';
+    bird_dy = -7.6;
+});
+
+document.addEventListener('touchend', (e) => {
+    if(game_state != 'Play') return;
+    
+    img.src = 'Bird.png';
+});
